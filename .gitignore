@@ -1,0 +1,8 @@
+node_modules
+.idea
+app/js
+app/style/css
+.sass-cache
+.log
+app/ts/localization/
+npm-debug.log

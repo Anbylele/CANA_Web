@@ -1,0 +1,41 @@
+h1, h2, h3, h4, html, body, li, ul, dl, dd, dt, header, nav, a, main, footer, p, button, input, fieldset, legend, hr {
+  padding: 0;
+  margin: 0;
+}
+@import "bourbon/bourbon";
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+html {
+  font-family: Tahoma, Arial;
+  color: #464646;
+  font-size: 10px;
+}
+
+body {
+  background: #fff;
+}
+
+a, a:hover, a:active, a:link {
+  text-decoration: none;
+  color: inherit
+}
+
+li {
+  list-style: none;
+}
+
+input:focus, textarea:focus, button:focus {
+  outline: none;
+}
+
+#loading {
+
+}
