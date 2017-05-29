@@ -12,7 +12,7 @@ import { AppUtil } from '../../util/app.util';
 export class HomeComponent implements OnInit,AfterViewInit{
 
     constructor(
-        private AppUtil:AppUtil,
+        private appUtil:AppUtil,
         private http:Http,
         private elementRef:ElementRef
     ){}

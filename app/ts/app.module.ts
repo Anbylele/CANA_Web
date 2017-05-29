@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import './util/rxjs-extensions';
 
 import { AppUtil } from './util/app.util';
+import { Global } from './util/global';
 import { UserService } from './service/user.service';
 import { UserDetailComponent } from './components/user_profile/user-detail.component';
 import { AppComponent } from './components/app.component';
@@ -63,6 +64,7 @@ import { routing } from './route/app.routing';
         AdminComponent
     ],
     providers:[
+        Global,
         AppUtil,
         UserService
     ],

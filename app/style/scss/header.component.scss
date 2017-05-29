@@ -1,5 +1,126 @@
 @import "bourbon/bourbon";
+@import "theme/theme.scss";
 
-h1 {
-  color: #00f;
+.wrap {
+  background: linear-gradient(30deg, #a0d4c7 , #d5ebe6);
+  position: relative;
+  overflow: hidden;
+
+  header {
+    $header-height: 82px;
+    position: relative;
+    height: $header-height;
+    z-index: 8;
+
+    .head-wrap {
+      width: 100%;
+      transition: background-color 0.2s;
+      height: $header-height;
+      border-bottom: 2px solid transparent;
+
+      & > div {
+        $height: 42px;
+        max-width: 960px;
+        padding-top: 8px;
+        margin: 0 auto;
+        padding: 18px;
+
+        .cana-logo, nav {
+          float: left;
+        }
+
+        .cana-logo {
+          height: $height;
+          margin-right: 36px;
+        }
+
+        nav {
+          position: relative;
+          height: $height;
+
+          &:before {
+            display: table;
+            content: "";
+          }
+
+          .nav {
+            color: $font-color;
+            font-size: 1.8rem;
+            float: left;
+            border: none;
+            height: 40%;
+            font-weight: 500;
+            margin-left: 22px;
+            margin-top: 6px;
+          }
+
+          .underscore {
+            position: absolute;
+            height: calc(40% + 16px);
+            width: 50px;
+            border-bottom: 4px solid $font-color;
+          }
+        }
+
+        button.login {
+          transition: background-color 0.2s;
+          float: right;
+          height: $height;
+          line-height: $height;
+          width: 170px;
+          border-radius: $height;
+          border-color: #ffffff;
+          background: #ffffff;
+        }
+      }
+    }
+  }
+
+  .middle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 70px;
+
+    h3 {
+      padding: 0 18px;
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 3rem;
+    }
+
+    p {
+      padding: 0 18px;
+      font-size: 1.6rem;
+    }
+  }
+
+  .welcome {
+    position: relative;
+    width: 500px;
+    height: 330px;
+    margin: 0 auto;
+    margin-top: 60px;
+
+    .board {
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+      }
+
+      .pencil {
+        top: -200px;
+        left: 10px;
+        height: 900px;
+      }
+
+      .paper {
+        top: -536px;
+        left: -520px;
+        width: 1500px;
+      }
+    }
+  }
 }
