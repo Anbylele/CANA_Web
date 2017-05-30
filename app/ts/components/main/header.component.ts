@@ -41,6 +41,9 @@ export class HeaderComponent{
 
         //get nav array
         this.aNav = oNav.querySelectorAll('.nav');
+
+        //initialize header bar
+        this.handleHeader();
     }
 
     ngOnInit(): void {
@@ -48,6 +51,10 @@ export class HeaderComponent{
     }
 
     @HostListener('window:scroll', ['$event']) onScroll(event): void{
+        this.handleHeader();
+    }
+
+    handleHeader(): void {
         if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
             this.oHeader.style.backgroundColor = "#fbfbfb";
             this.oHeader.style.position = "fixed";

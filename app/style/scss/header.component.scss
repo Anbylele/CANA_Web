@@ -8,7 +8,7 @@
   overflow: hidden;
 
   header {
-    $header-height: 81px;
+    $header-height: 78px;
     position: relative;
     height: $header-height;
     z-index: 8;
@@ -138,11 +138,18 @@
       margin-bottom: 16px;
       font-weight: 500;
       font-size: 3rem;
+      @media (max-width: 520px) {
+        line-height: 5rem;
+        margin-bottom: 12px;
+      }
     }
 
     p {
       padding: 0 18px;
       font-size: 1.6rem;
+      @media (max-width: 520px) {
+        line-height: 3.2rem;
+      }
     }
   }
 
@@ -154,7 +161,7 @@
     margin-top: 60px;
     @media (max-width: 520px) {
       width: 300px;
-      margin-top: 36px;
+      margin-top: 23px;
     }
 
     .board {
