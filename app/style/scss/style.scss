@@ -4,6 +4,11 @@ h1, h2, h3, h4, html, body, li, ul, dl, dd, dt, header, nav, a, main, footer, p,
 }
 @import "bourbon/bourbon";
 
+@font-face {
+  font-family: pingfangsclight;
+  src: url(../../font/AvenirLTStd-Light.otf);
+}
+
 img {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -19,11 +24,11 @@ button {
 }
 
 html {
-  font-family: Tahoma, Arial;
   font-size: 10px;
 }
 
 body {
+  font-family: pingfangsclight, Tahoma, Arial!important;
   background: #fff;
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { AppUtil } from '../../util/app.util';
 
 @Component({
@@ -9,7 +9,11 @@ import { AppUtil } from '../../util/app.util';
 })
 
 export class NewsComponent{
+
     constructor(
         private appUtil:AppUtil
     ){}
+
+    ngAfterViewInit(): void {
+    }
 }

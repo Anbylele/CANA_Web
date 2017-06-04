@@ -4,14 +4,17 @@
             <div>
                 <img class="cana-logo" src="app/images/logo.png">
                 <nav #nav>
-                    <button #nav1 class="nav active" (click)="onButtonClick(nav1)">Service</button>
-                    <button #nav2 class="nav" (click)="onButtonClick(nav2)">About</button>
-                    <button #nav3 class="nav" (click)="onButtonClick(nav3)">Event & News</button>
-                    <button #nav4 class="nav" (click)="onButtonClick(nav4)">Career</button>
+                    <button #nav1 data-index="1" class="nav active" (click)="onButtonClick(nav1)">Service</button>
+                    <button #nav2 data-index="2" class="nav" (click)="onButtonClick(nav2)">About</button>
+                    <button #nav3 data-index="3" class="nav" (click)="onButtonClick(nav3)">Event & News</button>
+                    <button #nav4 data-index="4" class="nav" (click)="onButtonClick(nav4)">Career</button>
+                    <div class="underscore"></div>
+                    <div class="underscore"></div>
+                    <div class="underscore"></div>
                     <div class="underscore"></div>
                 </nav>
                 <button class="login">Sign in/Sign up</button>
-                <button class="navbtn">
+                <button class="navbtn" (click)="onNav(overlap, navb)">
                     <div class="line"></div>
                     <div class="line"></div>
                     <div class="line"></div>
@@ -29,6 +32,42 @@
         <div class="board">
             <img class="paper" src="app/images/paper.png">
             <img class="pencil" src="app/images/pencil.png">
+        </div>
+    </div>
+
+    <div #overlap class="overlap">
+        <div #navb class="navb">
+            <div class="header">
+                <img class="cana-logo" src="app/images/logo.png">
+                <img class="closebtn" src="app/images/icons/close.png" (click)="onClose(overlap, navb)">
+            </div>
+            <div #navbody class="navbody">
+                <div class="navwrap">
+                    <div #navm class="buttons">
+                        <button #navm1 data-index="1" class="nav active" (click)="onButtonClick(navm1)">Service</button>
+                        <button #navm2 data-index="2" class="nav" (click)="onButtonClick(navm2)">About</button>
+                        <button #navm3 data-index="3" class="nav" (click)="onButtonClick(navm3)">Event & News</button>
+                        <button #navm4 data-index="4" class="nav" (click)="onButtonClick(navm4)">Career</button>
+                        <div class="underscore"></div>
+                        <div class="underscore"></div>
+                        <div class="underscore"></div>
+                        <div class="underscore"></div>
+                        <button class="login">Sign in/Sign up</button>
+                    </div>
+                    <div class="footer">
+                        <h3>Contact Us</h3>
+                        <p>We are here if you need us:</p>
+                        <a href="mailto:abc@example.com">CANA@gmail.com</a>
+                        <a href="tel:+01-613-888-8888">+1 (613) 888-8888</a>
+                        <div class="medias">
+                            <a href="#"><img src="app/images/icons/linkedin.gif" alt="LinkedIn" title="LinkedIn"></a>
+                            <a href="#"><img src="app/images/icons/facebook.gif" alt="Facebook" title="Facebook"></a>
+                            <a href="#"><img src="app/images/icons/instagram.gif" alt="Instagram" title="Instagram"></a>
+                            <a href="#"><img src="app/images/icons/wechat.gif" alt="WeChat" title="WeChat"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

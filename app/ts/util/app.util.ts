@@ -68,29 +68,8 @@ export class AppUtil{
         }
     }
 
-    //section toggle
-    handleSection(event:any, sectionContent, wrapper, parent=null, siblings=[]): void{
-        let height = Math.ceil(wrapper.offsetHeight);
-        if(!sectionContent.isOpen){
-            let sHeight = 0;
-            this.myMove_yzy(sectionContent,{height: height});
-            for(let i=0;i<siblings.length;i++){
-                this.myMove_yzy(siblings[i],{height: 0});
-                siblings[i].isOpen = false;
-                sHeight += siblings[i].offsetHeight;
-            }
-            if(parent){
-                let pHeight = parent.querySelector(".wrapper").offsetHeight+height-sHeight;
-                this.myMove_yzy(parent,{height: pHeight});
-            }
-            sectionContent.isOpen = true;
-        } else{
-            this.myMove_yzy(sectionContent,{height: 0});
-            if(parent){
-                let pHeight = parent.querySelector(".wrapper").offsetHeight-height;
-                this.myMove_yzy(parent,{height: pHeight});
-            }
-            sectionContent.isOpen = false;
-        }
+    //handle overflow scroll
+    createScroll(section): void {
+
     }
 }

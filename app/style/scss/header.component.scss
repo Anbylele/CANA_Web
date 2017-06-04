@@ -25,6 +25,7 @@
 
       & > div {
         $height: 42px;
+        position: relative;
         max-width: 960px;
         padding-top: 8px;
         margin: 0 auto;
@@ -52,7 +53,8 @@
           position: relative;
           height: $height;
           @media (max-width: 800px){
-            display: none;
+            position: absolute;
+            top: calc(-42px - 100px);
           }
 
           &:before {
@@ -61,6 +63,7 @@
           }
 
           .nav {
+            position: relative;
             font-size: 1.8rem;
             float: left;
             border: none;
@@ -68,12 +71,13 @@
             font-weight: 500;
             margin-left: 22px;
             margin-top: 6px;
+            z-index: 2;
           }
 
           .underscore {
             position: absolute;
             height: calc(40% + 16px);
-            width: 50px;
+            width: 0;
             border-bottom: 4px solid $font-color;
           }
         }
@@ -89,6 +93,9 @@
           background: #ffffff;
           @media (max-width: 800px) {
             display: none;
+          }
+          &:hover {
+            opacity: 0.8;
           }
         }
 
@@ -193,6 +200,152 @@
           width: 1000px;
           top: -340px;
           left: -370px;
+        }
+      }
+    }
+  }
+
+  .overlap {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: rgba(18,18,18,0.5);
+    z-index: 8;
+    $width: 236px;
+
+    .navb {
+      $width-navb: 300px;
+      position: absolute;
+      right: -$width-navb;
+      top: 0;
+      width: $width-navb;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      z-index: 8;
+
+      .header {
+        &:before {
+          content: "";
+          display: table;
+        }
+        width: $width;
+        margin: 0 auto;
+        padding-top: 32px;
+        height: 80px;
+        border-bottom: 1px solid #888;
+
+        .cana-logo {
+          height: 37px;
+          float: left;
+        }
+
+        .closebtn {
+          cursor: pointer;
+          width: 29px;
+          float: right;
+          margin-top: 4px;
+        }
+      }
+
+      .navbody {
+        background: #0f0;
+        overflow: hidden;
+        width: $width;
+        height: calc(100% - 110px);
+        margin: 0 auto;
+        position: relative;
+
+        .navwrap {
+          &:before, &:after {
+            content: "";
+            display: table;
+          }
+          width: 100%;
+          top: 0;
+          left: 0;
+          position: absolute;
+
+          .buttons {
+            padding-top: 40px;
+            position: relative;
+            width: $width;
+            margin: 0 auto;
+
+            .nav {
+              position: relative;
+              z-index: 2;
+              margin-bottom: 30px;
+              font-weight: 400;
+              font-size: 1.8rem;
+              border: none;
+              display: block;
+            }
+
+            .underscore {
+              position: absolute;
+              width: 0;
+              height: calc(1.8rem + 8px);
+              border-bottom: 3px solid #e67d62;
+            }
+
+            .login {
+              $height: 40px;
+              font-weight: 100;
+              color: #fff;
+              border: none;
+              background: $green-button-color;
+              font-size: 1.7rem;
+              height: $height;
+              width: 180px;
+              text-align: center;
+              border-radius: $width;
+            }
+          }
+
+          .footer {
+            width: 100%;
+            border-top: 1px solid #888;
+            margin-top: 36px;
+            padding-top: 26px;
+
+            h3, p, a {
+              font-size: 1.8rem;
+            }
+
+            p, a {
+              font-size: 1.8rem;
+              margin-top: 12px;
+            }
+
+            a {
+              display: block;
+            }
+
+            a:hover {
+              text-decoration: underline;
+            }
+
+            h3 {
+              font-weight: bold;
+            }
+
+            .medias {
+              margin-top: 18px;
+
+              a {
+                float: left;
+                margin-right: 18px;
+
+                img {
+                  height: 30px;
+                }
+              }
+            }
+          }
         }
       }
     }

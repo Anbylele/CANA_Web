@@ -1,1 +1,391 @@
 @import "bourbon/bourbon";
+@import "theme/theme.scss";
+
+.newsWrap {
+  width: 100%;
+}
+
+.cWrap {
+  font-size: 1.6rem;
+  max-width: 1390px;
+  margin: 0 auto!important;
+
+  //reset
+  html, body, div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, address, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strong, sub, sup, var,
+  b, u, i, dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+    background-color: white;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  a, button {
+    cursor: pointer;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size:25px;
+  }
+  h5 {
+    font-size: 13px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+
+  //font
+  h4 {
+    font-size: 15px;
+    line-height: 25px;
+    color: $text-color-darken;
+  }
+  h5 {
+    font-size: 15px;
+    line-height: 32px;
+    color: $text-color-darken;
+  }
+  h6 {
+    font-size: 13px;
+    line-height: 20px;
+    color: $text-color-lighter;
+  }
+  p {
+    color: $text-color-lighter;
+  }
+
+    //grid reset
+  margin: 0;
+  padding: 0;
+  width:100%;
+  .row, .container {
+    margin: 0;
+    padding: 0;
+    width:100%;
+  }
+  .col-xs-12 {
+    padding: 0;
+    margin-left: 0;
+  }
+  .col-sm-6 {
+    padding: 0;
+    margin: 0;
+  }
+  .col-xs-8 {
+    padding-left: 0;
+  }
+
+  //layout
+  @media screen and (min-width: 1000px){
+    padding: 30px 13% 10px 13%;
+    margin:0;
+    .container {
+      padding: 30px 13% 10px 13%;
+      margin:0;
+    }
+    .title {
+      padding: 35px 215px 0px 215px;
+    }
+    .card {
+      margin-right: 33px;
+    }
+    .event {
+      margin: 35px 0 0 20px;
+    }
+    .event-title {
+      padding-left: 20px;
+    }
+  }
+  @media screen and (min-width: 400px)and (max-width: 999px){
+    padding: 30px 8% 10px 8%;
+    margin:0;
+    .container {
+      padding: 30px 8% 10px 8%;
+      margin:0;
+    }
+    .title {
+      padding: 35px 0px;
+    }
+    .card {
+      margin-right: 33px;
+    }
+    .event {
+      margin: 35px 0 0 20px;
+    }
+    .event-title {
+      padding-left: 20px;
+    }
+  }
+  @media screen and (max-width: 400px){
+    padding: 30px 5px 10px 5px;
+    .container {
+      padding: 30px 5px 10px 5px;
+    }
+  }
+  .center {
+    text-align: center;
+  }
+  .cards {
+    position: relative;
+    top: 66px;
+  }
+
+  .title {
+    color: $text-color-darken;
+    margin-bottom: 10px;
+    h4 {
+      font-size: 1.7rem;
+      line-height: 3rem;
+      font-weight: 500;
+    }
+  }
+  .detail-link{
+    padding-left: 22px;
+    color: $green-text-color;
+    display: inline-block;
+    padding-top: 50px;
+  }
+  .fa-angle-right{
+    padding-left: 10px;
+  }
+  .card {
+    border: 1px solid rgba(235,230,230,0.5);
+    padding:24px 15px 20px 15px;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 53px;
+  }
+  .cicle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(235,230,230,0.36);
+    overflow: hidden;
+    margin-top: 13px;
+    float: left;
+  }
+  .update-date {
+    font-size: 11px;
+    line-height: 15px;
+    margin-top: 14px;
+    padding-left: 40px;
+  }
+  .event {
+    border: 1px solid rgba(235,230,230,0.36);
+    border-radius: 5px;
+    min-height: 290px;
+    overflow: hidden;
+    background-image: url("app/images/W.jpg");
+    background-size: contain;
+    background-position: center;
+    margin-top: 35px;
+  }
+  .event-title {
+    padding-top: 33px;
+  }
+  .event-title h5 {
+    line-height: 36px;
+  }
+  .event-title h6 {
+    line-height: 30px;
+    font-size: 14.5px;
+  }
+  .form-control {
+    border-top: none;
+    border-left: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+  .subscribe {
+    border-radius: 50px;
+    width: 26%;
+    border-color: $green-button-color;
+    color: $green-button-color;
+    margin-left: 10px;
+
+  }
+  .fa-calendar-check-o{
+    margin-top: 25px;
+    padding-right: 10px;
+    font-size: 18px;
+  }
+  .event-date {
+    display: inline-block;
+  }
+  .register {
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    z-index: 6;
+  }
+  .career {
+    padding-top: 150px;
+  }
+  .card-job {
+    &:hover {
+      background-color: $gray;
+    }
+    position: relative;
+    cursor: pointer;
+    width:10vw;
+    height: 10vw;
+    border: 2px solid $chatpop-color;
+    border-radius: 7px;
+    background-color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    margin: 42px 10px 0 10px;
+    padding: 0 8px;
+    display: inline-block;
+    box-shadow: 0 0 18px #ddd;
+    z-index: 2;
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+    @media(max-width: 1070px) {
+      width: 12vw;
+      height: 12vw;
+    }
+    @media(max-width: 900px) {
+      margin: 80px 3px 0 3px;
+      word-wrap: break-word;
+    }
+    @media(max-width: 640px) {
+      width: 14vw;
+      height: 14vw;
+    }
+    @media(max-width: 530px) {
+      width: 18vw;
+      height: 18vw;
+    }
+    @media(max-width: 400px) {
+      font-size: 1.5rem;
+      margin: 80px 2px 0 2px;
+      width: 20vw;
+      height: 20vw;
+    }
+    @media(max-width: 370px) {
+      width: 20vw;
+      height: 20vw;
+    }
+  }
+  .card-job p {
+    position: relative;
+    top: 50%;
+    color: $orange-button-color;
+    transform: translateY(-50%);
+    display: block;
+  }
+}
+
+.clearFloat {
+  clear: both;
+}
+.careerSection {
+  overflow: hidden;
+  width: 100%;
+  background-color: $background-lightgreen;
+  margin-top: 0;
+  .career-content {
+    margin-bottom: 70px;
+    padding-top: 200px;
+    position: relative;
+    max-width: 700px;
+    .require {
+      $gap: 12px;
+      $gap-hrizon: 36px;
+      padding-top: $gap;
+      padding-bottom: $gap;
+      padding-left: $gap-hrizon;
+      padding-right: $gap-hrizon;
+      margin-bottom: 36px;
+      background: $cyran;
+      color: #fff;
+      border-radius: 6px;
+      h3, h4 {
+        margin: 12px 0;
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+      }
+      .arrow-right {
+        position: absolute;
+        right: -21px;
+        top: 88px;
+        border-left: 12px solid $cyran;
+        border-right: 12px solid transparent;
+        border-top: 16px solid transparent;
+        border-bottom: 16px solid transparent;
+      }
+    }
+    .oppos {
+      .oppo {
+        $left: 32px;
+        margin-bottom: 16px;
+        a {
+          margin-left: $left;
+        }
+        h3, p {
+          color: $cyran;
+        }
+        h3 {
+          display: inline-block;
+          font-size: 1.5rem;
+          border-bottom: 2px solid $cyran;
+        }
+        p {
+          margin-top: 3px;
+          margin-left: $left;
+        }
+      }
+    }
+  }
+}
+
+.card:hover {
+  transition: 0.3s;
+  border: 1px solid rgba(235,230,230,0.5);
+  box-shadow: -6px 6px 35px 0px rgba(215,215,215,0.5)
+}
+.detail-link:hover {
+  color: $green-text-hover;
+  text-decoration: none;
+}
