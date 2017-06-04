@@ -1,10 +1,20 @@
 <div class="newsWrap">
     <div class="container row cWrap">
+        <div class="barWrap">
+            <div #nav class="newsNav">
+                <button #btn1 data-index=1 (click)="onButtonClick(btn1)">News</button>
+                <button #btn2 data-index=2 (click)="onButtonClick(btn2)">Upcoming Events</button>
+                <div class="underscore"></div>
+                <div class="underscore"></div>
+            </div>
+        </div>
+
+        <hr class="news_"/>
         <div class="col-xs-12 center title news">
             <h4>CANA定期举办专业主题公开课，拍摄职业照等活动，满足非学员的需求，承担更多社会责任。</h4>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <a class="detail-link" href="#">News <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="detail-link"><a href="#">News </a><i class="fa fa-angle-right" aria-hidden="true"></i></div>
             <div class="card">
                 <h5>CANA 官方网站正式上线！</h5>
                 <h6>据CANA的现任会计导师回想，当年留学毕业的时候由于缺乏经验，找工作可谓是上天无路入地无门。在校期间只专注于上…</h6>
@@ -34,13 +44,13 @@
             <button type="button" name="button" class="btn btn-default subscribe">Subscribe</button>
         </div>
         <div class="col-xs-12 col-sm-6">
-            <a class="detail-link" href="#">Upcoming Events <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            <div class="detail-link"><a href="#">Upcoming Events</a> <i class="fa fa-angle-right" aria-hidden="true"></i></div>
             <div class="event">
             </div>
             <div class="event-title">
                 <h5>三个小时内让你有能力独立自信的进行财务和金融数据分析!</h5>
                 <h6>Microsoft Excel是微软公司的办公软件Microsoft office的组件之一，是由Microsoft为Windows和Apple Macintosh操作系统...</h6>
-                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                <i class="fa fa-calendar-check-o" aria-hidden="true">-</i>
                 <p class="event-date">27,May@2:00pm</p>
                 <button type="button" name="button" class="btn btn-default register subscribe">Register</button>
             </div>

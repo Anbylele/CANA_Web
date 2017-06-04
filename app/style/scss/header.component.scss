@@ -252,7 +252,6 @@
       }
 
       .navbody {
-        background: #0f0;
         overflow: hidden;
         width: $width;
         height: calc(100% - 110px);
@@ -293,11 +292,14 @@
             }
 
             .login {
+              &:hover {
+                background-color: $green-button-hover;
+              }
               $height: 40px;
               font-weight: 100;
               color: #fff;
               border: none;
-              background: $green-button-color;
+              background-color: $green-button-color;
               font-size: 1.7rem;
               height: $height;
               width: 180px;

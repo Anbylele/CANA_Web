@@ -1,14 +1,60 @@
 @import "bourbon/bourbon";
 @import "theme/theme.scss";
+@import "util/news.util";
 
 .newsWrap {
   width: 100%;
 }
 
 .cWrap {
+  @media(max-width: $max-width) {
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
   font-size: 1.6rem;
   max-width: 1390px;
   margin: 0 auto!important;
+
+  //nav bar
+  .barWrap {
+    position: relative;
+    .newsNav {
+      padding: 0 18px;
+      max-width: 260px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      @media (max-width: $max-width) {
+        overflow: visible;
+        height: 28px;
+      }
+      button {
+        border: none;
+        font-size: 1.7rem;
+        &:nth-of-type(1) {
+          float: left;
+        }
+        &:nth-of-type(2) {
+          float: right;
+        }
+      }
+      .underscore {
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        width: 39px;
+        border-bottom: 2px solid $orange-button-color;
+      }
+    }
+  }
+
+  .news_ {
+    display: none;
+    @media (max-width: 500px) {
+      display: block;
+    }
+  }
 
   //reset
   html, body, div, span, object, iframe,
@@ -132,7 +178,14 @@
       padding-left: 20px;
     }
   }
-  @media screen and (min-width: 400px)and (max-width: 999px){
+  @media(max-width: $max-width) {
+    .card {
+      width: 100%;
+      border: 1px solid rgba(235,230,230,0.5)!important;
+      box-shadow: -6px 6px 35px 0px rgba(215,215,215,0.5)!important;
+    }
+  }
+  @media screen and (min-width: 400px)and (max-width: 1000px){
     padding: 30px 8% 10px 8%;
     margin:0;
     .container {
@@ -150,6 +203,12 @@
     }
     .event-title {
       padding-left: 20px;
+    }
+  }
+  @media(max-width: $max-width) {
+    .event {
+      width: 100%;
+      margin: 0!important;
     }
   }
   @media screen and (max-width: 400px){
@@ -176,6 +235,10 @@
     }
   }
   .detail-link{
+    @media (max-width: $max-width) {
+      overflow: hidden;
+      height: 0;
+    }
     padding-left: 22px;
     color: $green-text-color;
     display: inline-block;
@@ -221,17 +284,45 @@
   }
   .event-title h5 {
     line-height: 36px;
+    font-weight: bold;
   }
   .event-title h6 {
     line-height: 30px;
     font-size: 14.5px;
   }
+  .event-title {
+    @media (max-width: $max-width) {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
+  .email-input {
+    @media (max-width: $max-width) {
+      width: 100%;
+    }
+  }
+  .news {
+    @media (max-width: $max-width) {
+      margin-top: 39px;
+      padding: 0 18px;
+      position: relative;
+      top: 30px;
+    }
+  }
   .form-control {
     border-top: none;
     border-left: none;
-    border-left: none;
     border-right: none;
     box-shadow: none;
+    @media (max-width: $max-width) {
+      border-top: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-radius: 36px;
+      width: 80%;
+      margin: 0 auto 36px;
+      display: block;
+    }
   }
   .subscribe {
     border-radius: 50px;
@@ -239,7 +330,16 @@
     border-color: $green-button-color;
     color: $green-button-color;
     margin-left: 10px;
-
+    @media (max-width: $max-width) {
+      display: block;
+      width: 180px;
+      margin: 0 auto;
+      background-color: $green-button-color;
+      color: #fff;
+      &:hover {
+        background-color: $green-button-hover;
+      }
+    }
   }
   .fa-calendar-check-o{
     margin-top: 25px;
@@ -254,9 +354,17 @@
     right: 0;
     margin-top: 15px;
     z-index: 6;
+    @media (max-width: $max-width) {
+      right: 18px;
+    }
   }
   .career {
     padding-top: 150px;
+    h4 {
+      @media (max-width: $max-width) {
+        padding: 0 18px;
+      }
+    }
   }
   .card-job {
     &:hover {
@@ -315,6 +423,18 @@
     transform: translateY(-50%);
     display: block;
   }
+
+  .card:hover {
+    transition: 0.3s;
+    border: 1px solid rgba(235,230,230,0.5);
+    box-shadow: -6px 6px 35px 0px rgba(215,215,215,0.5);
+  }
+  .detail-link{
+    &>a:hover {
+      color: $green-text-hover;
+      text-decoration: none;
+    }
+  }
 }
 
 .clearFloat {
@@ -370,22 +490,18 @@
           display: inline-block;
           font-size: 1.5rem;
           border-bottom: 2px solid $cyran;
+          @media (max-width: 768px) {
+            font-size: 1.9rem;
+          }
         }
         p {
+          @media (max-width: 768px) {
+            font-size: 1.8rem;
+          }
           margin-top: 3px;
           margin-left: $left;
         }
       }
     }
   }
-}
-
-.card:hover {
-  transition: 0.3s;
-  border: 1px solid rgba(235,230,230,0.5);
-  box-shadow: -6px 6px 35px 0px rgba(215,215,215,0.5)
-}
-.detail-link:hover {
-  color: $green-text-hover;
-  text-decoration: none;
 }

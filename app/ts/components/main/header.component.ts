@@ -30,37 +30,28 @@ export class HeaderComponent{
     ){}
 
     ngAfterViewInit(): void {
-        //handle nav bar animation
         let oNav = this.nav.nativeElement;
         let oNavm = this.navm.nativeElement;
+        this.aNav = oNav.querySelectorAll('.nav');
+        this.aNavm = oNavm.querySelectorAll('.nav');
         this.aUnderscore = oNav.querySelectorAll(".underscore");
         this.aUnderscorem = oNavm.querySelectorAll(".underscore");
-        let oActive = oNav.querySelector('.active');
-        let oActivem = oNavm.querySelector('.active');
-        let left = oActive.offsetLeft;
-        let width = oActive.offsetWidth;
-        let leftm = oActivem.offsetLeft;
-        let widthm = oActivem.offsetWidth;
-        this.aUnderscore[oActive.dataset.index-1].style.left = left +'px';
-        this.aUnderscore[oActive.dataset.index-1].style.width = width +'px';
-        this.aUnderscorem[oActive.dataset.index-1].style.left = leftm +'px';
-        this.aUnderscorem[oActive.dataset.index-1].style.width = widthm +'px';
+        this.oHeader = this.header.nativeElement;
 
         //get header's height
-        this.oHeader = this.header.nativeElement;
         this.global.setHeaderHeight(this.oHeader.offsetHeight);
 
         //get login button
         this.oLoginButton = this.oHeader.querySelector('.login');
 
         //get nav array
-        this.aNav = oNav.querySelectorAll('.nav');
-        this.aNavm = oNavm.querySelectorAll('.nav');
         for(let i=0;i<this.aNav.length;i++) {
-            this.aUnderscore[i].style.left = this.aNav[i].offsetLeft + "px";
+            this.aUnderscore[i].style.width = "0";
+            this.aUnderscore[i].style.left = (this.aNav[i].offsetWidth / 2 + this.aNav[i].offsetLeft) + "px";
         }
         for(let i=0;i<this.aNavm.length;i++) {
-            this.aUnderscorem[i].style.left = this.aNavm[i].offsetLeft + "px";
+            this.aUnderscorem[i].style.width = "0";
+            this.aUnderscorem[i].style.left = (this.aNavm[i].offsetWidth / 2 + this.aNavm[i].offsetLeft) + "px";
             this.aUnderscorem[i].style.top = this.aNavm[i].offsetTop + "px";
         }
 
@@ -94,7 +85,11 @@ export class HeaderComponent{
     }
 
     onButtonClick(oButton): void {
-        if(oButton.className !== "nav active"){
+        this.underscoreMove(oButton);
+    }
+
+    underscoreMove(oButton): void {
+        if(oButton.className.toUpperCase() !== "NAV ACTIVE"){
             for (let i=0;i<this.aNav.length;i++){
                 this.aNav[i].className = "nav";
                 this.appUtil.myMove_yzy(this.aUnderscore[i],{
