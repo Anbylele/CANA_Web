@@ -1,4 +1,4 @@
-<div class="newsWrap">
+<div class="component newsWrap">
     <div class="container row cWrap">
         <div class="barWrap">
             <div #nav class="newsNav">
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="email-input col-xs-8">
-                <input type="text" class="form-control" placeholder="Your email address">
+                <input type="text" class="form-control" placeholder="Enter your email address">
             </div>
             <button type="button" name="button" class="btn btn-default subscribe">Subscribe</button>
         </div>
@@ -50,8 +50,11 @@
             <div class="event-title">
                 <h5>三个小时内让你有能力独立自信的进行财务和金融数据分析!</h5>
                 <h6>Microsoft Excel是微软公司的办公软件Microsoft office的组件之一，是由Microsoft为Windows和Apple Macintosh操作系统...</h6>
-                <i class="fa fa-calendar-check-o" aria-hidden="true">-</i>
-                <p class="event-date">27,May@2:00pm</p>
+                <div class="calendar">
+                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                    <img src="app/images/icons/calendar.gif">
+                    <p class="event-date">27, May @2:00pm</p>
+                </div>
                 <button type="button" name="button" class="btn btn-default register subscribe">Register</button>
             </div>
         </div>

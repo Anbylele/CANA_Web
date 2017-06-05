@@ -1,1 +1,195 @@
 @import "bourbon/bourbon";
+@import "theme/theme.scss";
+@import "util/about.util.scss";
+
+.aboutWrap {
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  .canaInfo {
+    background-color: $light-gray;
+    padding-top: 158px;
+    margin-top: 200px;
+    @media (max-width: 992px) {
+      padding-top: 68px;
+    }
+    .leftside {
+      position: relative;
+      &:after {
+        content: "";
+        display: table;
+      }
+      @media (max-width: 992px) {
+        margin-bottom: 36px;
+      }
+      .wrap {
+        width: 60%;
+        float: right;
+        @media (max-width: 992px) {
+          float: none;
+          width: auto;
+          margin: 0 auto;
+          max-width: 288px;
+          text-align: center;
+        }
+        .info {
+          margin-bottom: 28px;
+          .img {
+            position: relative;
+            img {
+              position: relative;
+              left: -2px;
+              width: 32px;
+            }
+          }
+          p {
+            margin-top: 16px;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+    .clearFloat {
+      display: none;
+      @media (max-width: 991px) {
+        display: block;
+      }
+      height: 0;
+      clear: both;
+    }
+    .rightside {
+      position: relative;
+      @media (max-width: 600px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .wrap {
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+        .mentorList {
+          position: relative;
+          .mentor {
+            &:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            padding: 0 6px 50px 56px;
+            @media (max-width: 600px) {
+              padding: 0 0 50px 0;
+            }
+            .img {
+              $width: 55px;
+              width: $width;
+              position: relative;
+              .frame {
+                overflow: hidden;
+                width: $width;
+                height: $width;
+                position: absolute;
+                bottom: 8px;
+                border-radius: 50%;
+                @media (max-width: 600px) {
+                  bottom: calc(50% - 27px);
+                }
+                img {
+                  width: $width;
+                }
+              }
+            }
+            .intro {
+              border-radius: 4px;
+              box-sizing: border-box;
+              width: 470px;
+              b {
+                font-size: 3rem;
+                @media (max-width: 600px) {
+                  font-size: 2.6rem;
+                }
+              }
+              @media (max-width: 600px) {
+                font-size: 1.4rem;
+              }
+            }
+            &:nth-of-type(odd) {
+              .img {
+                float: left;
+              }
+              .intro {
+                position: relative;
+                margin-left: 36px;
+                padding: 10px 27px 10px 37px;
+                background-color: $chatpop-color;
+                float: left;
+                @media (max-width: 600px) {
+                  padding: 10px 17px 10px 27px;
+                }
+                .arrows {
+                  position: absolute;
+                  $width: 23px;
+                  $height: 26px;
+                  width: $width;
+                  height: $height;
+                  background: url("app/images/icons/arrow_cyan.png") 0 0 no-repeat;
+                  background-size: $width $height;
+                  left: -23px;
+                  bottom: 18px;
+                  @media (max-width: 600px) {
+                    bottom: calc(50% - 20px);
+                  }
+                }
+              }
+            }
+            &:nth-of-type(even) {
+              .img {
+                float: right;
+              }
+              .intro {
+                position: relative;
+                border: 3px solid $orange-button-color;
+                margin-right: 36px;
+                padding: 10px 37px 10px 27px;
+                background-color: #fff;
+                float: right;
+                @media (max-width: 600px) {
+                  padding: 10px 27px 10px 17px;
+                }
+                .arrows {
+                  position: absolute;
+                  $width: 23px;
+                  $height: 26px;
+                  width: $width;
+                  height: $height;
+                  background: url("app/images/icons/arrow-orange.png") 0 0 no-repeat;
+                  background-size: $width $height;
+                  right: -23px;
+                  bottom: 18px;
+                  @media (max-width: 600px) {
+                    bottom: calc(50% - 20px);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .bottomLine {
+        position: relative;
+        width: 200%;
+        left: 53px;
+        margin-bottom: 100px;
+        height: 0;
+        border-bottom: 6px solid $median-gray;
+        @media (max-width: 991px) {
+          border-bottom: 3px solid $median-gray;
+        }
+        @media (max-width: 600px) {
+          left: 0;
+        }
+      }
+    }
+  }
+}

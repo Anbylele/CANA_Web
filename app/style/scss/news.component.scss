@@ -235,14 +235,16 @@
     }
   }
   .detail-link{
-    @media (max-width: $max-width) {
-      overflow: hidden;
-      height: 0;
-    }
     padding-left: 22px;
     color: $green-text-color;
     display: inline-block;
     padding-top: 50px;
+    @media (max-width: $max-width) {
+      display: block;
+      overflow: hidden;
+      height: 0;
+      padding-top: 86px;
+    }
   }
   .fa-angle-right{
     padding-left: 10px;
@@ -281,6 +283,16 @@
   }
   .event-title {
     padding-top: 33px;
+    img {
+      display: none;
+      @media (max-width: $max-width) {
+        display: inline-block;
+      }
+      position: relative;
+      height: 20px;
+      top: 3px;
+      margin-right: 3px;
+    }
   }
   .event-title h5 {
     line-height: 36px;
@@ -333,7 +345,7 @@
     @media (max-width: $max-width) {
       display: block;
       width: 180px;
-      margin: 0 auto;
+      margin: 10px auto 0;
       background-color: $green-button-color;
       color: #fff;
       &:hover {
@@ -348,14 +360,24 @@
   }
   .event-date {
     display: inline-block;
+    @media (max-width: $max-width) {
+      font-size: 1.8rem!important;
+    }
   }
   .register {
     position: absolute;
     right: 0;
-    margin-top: 15px;
+    margin-top: 10px;
     z-index: 6;
     @media (max-width: $max-width) {
-      right: 18px;
+      right: calc(50% - 90px);
+    }
+  }
+  .calendar {
+    @media (max-width: $max-width) {
+      width: 100%;
+      text-align: center;
+      margin: 26px 0;
     }
   }
   .career {
@@ -384,6 +406,7 @@
     display: inline-block;
     box-shadow: 0 0 18px #ddd;
     z-index: 2;
+    word-wrap: break-word;
     a {
       display: block;
       height: 100%;
@@ -395,7 +418,6 @@
     }
     @media(max-width: 900px) {
       margin: 80px 3px 0 3px;
-      word-wrap: break-word;
     }
     @media(max-width: 640px) {
       width: 14vw;
@@ -404,12 +426,13 @@
     @media(max-width: 530px) {
       width: 18vw;
       height: 18vw;
+      font-size: 1.5rem;
     }
     @media(max-width: 400px) {
-      font-size: 1.5rem;
       margin: 80px 2px 0 2px;
       width: 20vw;
       height: 20vw;
+      font-size: 1.4rem;
     }
     @media(max-width: 370px) {
       width: 20vw;
