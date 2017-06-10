@@ -67,9 +67,4 @@ export class AppUtil{
             }
         }
     }
-
-    //handle overflow scroll
-    createScroll(section): void {
-
-    }
 }

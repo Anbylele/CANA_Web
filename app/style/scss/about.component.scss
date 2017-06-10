@@ -108,7 +108,7 @@
         }
         .mentorList {
           position: relative;
-          cursor: move;
+          cursor: pointer;
           .mentor {
             &:after {
               content: "";

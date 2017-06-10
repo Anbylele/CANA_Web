@@ -36,6 +36,9 @@ a, a:hover, a:active, a:link {
   text-decoration: none;
   color: inherit
 }
+a {
+  cursor: pointer;
+}
 
 li {
   list-style: none;

@@ -212,8 +212,11 @@ export class AboutComponent{
                     init.triggered = true;
                     init.scrollTop = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
                 }
-                document.documentElement.scrollTop = init.scrollTop - e.screenY + init.markY;
-                document.body.scrollTop = init.scrollTop - e.screenY + init.markY;
+                if(document.documentElement.scrollTop) {
+                    document.documentElement.scrollTop = init.scrollTop - e.screenY + init.markY;
+                }else {
+                    document.body.scrollTop = init.scrollTop - e.screenY + init.markY;
+                }
             }
         }
         let percent = Y / bottom;
