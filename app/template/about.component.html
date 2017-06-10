@@ -18,8 +18,24 @@
         </div>
         <div class="clearFloat"></div>
         <div class="rightside col-sm-12 col-md-7">
-            <div class="wrap">
-                <div #mentorList class="mentorList">
+            <div class="canvas"></div>
+            <div #scroll class="scrollbar" (mousedown)="onDrag($event, scroll, container, mentorList, 'scrollbar')" ></div>
+            <div #container class="wrap">
+                <div #mentorList class="mentorList" (mousedown)="onDrag($event, scroll, container, mentorList, 'content')">
+                    <div class="mentor">
+                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                        <div class="intro">
+                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                            <div class="arrows"></div>
+                        </div>
+                    </div>
+                    <div class="mentor">
+                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                        <div class="intro">
+                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                            <div class="arrows"></div>
+                        </div>
+                    </div>
                     <div class="mentor">
                         <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
                         <div class="intro">

@@ -49,10 +49,11 @@
     }
   }
 
-  .news_ {
+  .news_, .career_ {
     display: none;
     @media (max-width: 500px) {
       display: block;
+      border-width: 2px;
     }
   }
 
@@ -331,6 +332,7 @@
       border-left: 1px solid #ccc;
       border-right: 1px solid #ccc;
       border-radius: 36px;
+      text-align: center;
       width: 80%;
       margin: 0 auto 36px;
       display: block;
@@ -378,10 +380,17 @@
       width: 100%;
       text-align: center;
       margin: 26px 0;
+      i {
+        display: none;
+      }
     }
   }
   .career {
     padding-top: 150px;
+    @media (max-width: $max-width) {
+      padding-bottom: 0;
+      padding-top: 55px;
+    }
     h4 {
       @media (max-width: $max-width) {
         padding: 0 18px;
@@ -417,7 +426,7 @@
       height: 12vw;
     }
     @media(max-width: 900px) {
-      margin: 80px 3px 0 3px;
+      margin: 8px 3px 0 3px;
     }
     @media(max-width: 640px) {
       width: 14vw;
@@ -429,7 +438,7 @@
       font-size: 1.5rem;
     }
     @media(max-width: 400px) {
-      margin: 80px 2px 0 2px;
+      margin: 8px 2px 0 2px;
       width: 20vw;
       height: 20vw;
       font-size: 1.4rem;
@@ -437,6 +446,7 @@
     @media(max-width: 370px) {
       width: 20vw;
       height: 20vw;
+      font-size: 1rem;
     }
   }
   .card-job p {
@@ -458,6 +468,44 @@
       text-decoration: none;
     }
   }
+
+  .careerWrap {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    @media (max-width: $max-width) {
+      margin-top: 136px;
+      overflow: visible;
+      height: 28px;
+    }
+    .careerNav {
+      padding: 0 18px;
+      max-width: 280px;
+      margin: 0 auto;
+      position: relative;
+      @media (max-width: $max-width) {
+        overflow: visible;
+        height: 28px;
+      }
+      button {
+        border: none;
+        font-size: 1.7rem;
+        &:nth-of-type(1) {
+          float: left;
+        }
+        &:nth-of-type(2) {
+          float: right;
+        }
+      }
+      .underscore {
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        width: 39px;
+        border-bottom: 2px solid $orange-button-color;
+      }
+    }
+  }
 }
 
 .clearFloat {
@@ -473,6 +521,9 @@
     padding-top: 200px;
     position: relative;
     max-width: 700px;
+    @media (max-width: 600px) {
+      padding-top: 136px;
+    }
     .require {
       $gap: 12px;
       $gap-hrizon: 36px;
@@ -500,6 +551,10 @@
       }
     }
     .oppos {
+      position: relative;
+      @media (max-width: 350px) {
+        left: -30px;
+      }
       .oppo {
         $left: 32px;
         margin-bottom: 16px;
@@ -516,10 +571,16 @@
           @media (max-width: 768px) {
             font-size: 1.9rem;
           }
+          @media (max-width: 350px) {
+            font-size: 1.6rem;
+          }
         }
         p {
           @media (max-width: 768px) {
             font-size: 1.8rem;
+          }
+          @media (max-width: 350px) {
+            font-size: 1.5rem;
           }
           margin-top: 3px;
           margin-left: $left;

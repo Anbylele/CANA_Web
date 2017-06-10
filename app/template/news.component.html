@@ -2,8 +2,8 @@
     <div class="container row cWrap">
         <div class="barWrap">
             <div #nav class="newsNav">
-                <button #btn1 data-index=1 (click)="onButtonClick(btn1)">News</button>
-                <button #btn2 data-index=2 (click)="onButtonClick(btn2)">Upcoming Events</button>
+                <button #btn1 data-index=1 data-id="news" (click)="onButtonClick(btn1)">News</button>
+                <button #btn2 data-index=2 data-id="news" (click)="onButtonClick(btn2)">Upcoming Events</button>
                 <div class="underscore"></div>
                 <div class="underscore"></div>
             </div>
@@ -58,6 +58,18 @@
                 <button type="button" name="button" class="btn btn-default register subscribe">Register</button>
             </div>
         </div>
+
+        <div class="clearFloat"></div>
+        <div class="careerWrap">
+            <div #cnav class="careerNav">
+                <button #cbtn1 data-index=1 data-id="career" (click)="onButtonClick(cbtn1)">Requirements</button>
+                <button #cbtn2 data-index=2 data-id="career" (click)="onButtonClick(cbtn2)">Opportunities</button>
+                <div class="underscore"></div>
+                <div class="underscore"></div>
+            </div>
+        </div>
+        <hr class="career_"/>
+
         <div class="col-xs-12 center title career">
             <h4>志愿者导师们从CANA成立以来，一直在为同学们创造和寻找实习机会,感兴趣的同学请不定期查本网站公布的实习工作机会。</h4>
         </div>
@@ -76,34 +88,34 @@
             </div>
         </div>
     </div>
-        <div class="clearFloat"></div>
-        <div class="careerSection">
-            <div class="career-content container-fluid">
-                <div class="require col-xs-12 col-sm-7">
-                    <h3>参与实习的同学需要满足一下需求:</h3>
-                    <h4>1. 是CANA的注册学员，完成或正在进行CANA核心就业辅导课程</h4>
-                    <h4>2. 认真对待实习机会，积极尝试凭借实习经验有效推销自己</h4>
-                    <h4>3. 实习期间积极主动地寻找工作</h4>
-                    <div class="arrow-right"></div>
+    <div class="clearFloat"></div>
+    <div class="careerSection">
+        <div class="career-content container-fluid">
+            <div class="require col-xs-12 col-sm-7">
+                <h3>参与实习的同学需要满足一下需求:</h3>
+                <h4>1. 是CANA的注册学员，完成或正在进行CANA核心就业辅导课程</h4>
+                <h4>2. 认真对待实习机会，积极尝试凭借实习经验有效推销自己</h4>
+                <h4>3. 实习期间积极主动地寻找工作</h4>
+                <div class="arrow-right"></div>
+            </div>
+            <div class="oppos col-xs-12 col-sm-5">
+                <div class="oppo">
+                    <a href="#"><h3>Website Designer-Intern</h3></a>
+                    <p>Ottawa</p>
                 </div>
-                <div class="oppos col-xs-12 col-sm-5">
-                    <div class="oppo">
-                        <a href="#"><h3>Website Designer-Intern</h3></a>
-                        <p>Ottawa</p>
-                    </div>
-                    <div class="oppo">
-                        <a href="#"><h3>Front End Developer-Intern</h3></a>
-                        <p>Ottawa</p>
-                    </div>
-                    <div class="oppo">
-                        <a href="#"><h3>Website Designer-Intern</h3></a>
-                        <p>Ottawa</p>
-                    </div>
-                    <div class="oppo">
-                        <a href="#"><h3>Front End Developer-Intern</h3></a>
-                        <p>Ottawa</p>
-                    </div>
+                <div class="oppo">
+                    <a href="#"><h3>Front End Developer-Intern</h3></a>
+                    <p>Ottawa</p>
+                </div>
+                <div class="oppo">
+                    <a href="#"><h3>Website Designer-Intern</h3></a>
+                    <p>Ottawa</p>
+                </div>
+                <div class="oppo">
+                    <a href="#"><h3>Front End Developer-Intern</h3></a>
+                    <p>Ottawa</p>
                 </div>
             </div>
         </div>
+    </div>
 </div>

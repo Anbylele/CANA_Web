@@ -3,16 +3,18 @@
 @import "util/about.util.scss";
 
 .aboutWrap {
+  overflow: hidden;
   &:before {
     content: "";
     display: table;
   }
 
   .canaInfo {
+    padding: 158px 6px 0;
     background-color: $light-gray;
-    padding-top: 158px;
     margin-top: 200px;
-    @media (max-width: 992px) {
+    @media (max-width: 991px) {
+      margin-top: 0;
       padding-top: 68px;
     }
     .leftside {
@@ -60,17 +62,53 @@
       clear: both;
     }
     .rightside {
+      $mobile-width: 992px;
       position: relative;
+      top: -258px;
+      @media (max-width: $mobile-width) {
+        top: 0;
+      }
       @media (max-width: 600px) {
         padding-left: 0;
         padding-right: 0;
       }
+      .canvas {
+        height:300px;
+        position: absolute;
+        top: 0;
+        left: 162px;
+        background-color: $light-gray;
+        width: 150%;
+
+      }
+      .scrollbar {
+        $width: 11px;
+        position: absolute;
+        width: $width;
+        border-radius: $width;
+        height: 128px;
+        right: 0;
+        top: 0;
+        opacity: 0.8;
+        background-color: $chatpop-color;
+        &:hover {
+          opacity: 1;
+        }
+        @media (max-width: $mobile-width) {
+          visibility: hidden;
+          width: 0;
+        }
+      }
       .wrap {
         position: relative;
         overflow: hidden;
-        height: 600px;
+        height: 920px;
+        @media (max-width: $mobile-width) {
+          height:500px;
+        }
         .mentorList {
           position: relative;
+          cursor: move;
           .mentor {
             &:after {
               content: "";
@@ -135,7 +173,7 @@
                   height: $height;
                   background: url("app/images/icons/arrow_cyan.png") 0 0 no-repeat;
                   background-size: $width $height;
-                  left: -23px;
+                  left: -22px;
                   bottom: 18px;
                   @media (max-width: 600px) {
                     bottom: calc(50% - 20px);
@@ -182,7 +220,7 @@
         left: 53px;
         margin-bottom: 100px;
         height: 0;
-        border-bottom: 6px solid $median-gray;
+        border-bottom: 5px solid $median-gray;
         @media (max-width: 991px) {
           border-bottom: 3px solid $median-gray;
         }
