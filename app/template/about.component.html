@@ -1,79 +1,132 @@
 <div class="component aboutWrap">
     <div class="canaInfo container-fluid">
-        <div class="leftside col-sm-12 col-md-5">
-            <div class="wrap">
-                <div class="info">
-                    <div class="img"><img src="app/images/icons/heart.gif"></div>
-                    <p>CANA由三位创始人于2016年6月再渥太华创立，是一家向加拿大政府注册的非盈利组织。</p>
+        <div class="canaInfoWrap">
+            <div class="leftside col-sm-12 col-md-5">
+                <div class="wrap">
+                    <div class="info">
+                        <div class="img"><img src="app/images/icons/heart.gif"></div>
+                        <p>CANA由三位创始人于2016年6月再渥太华创立，是一家向加拿大政府注册的非盈利组织。</p>
+                    </div>
+                    <div class="info">
+                        <div class="img"><img src="app/images/icons/box.gif"></div>
+                        <p>CACA以帮助毕业的国际留学生顺利进入本地就业市场为使命，通过评估目前职业现状，设计适合的职业规划。</p>
+                    </div>
+                    <div class="info">
+                        <div class="img"><img src="app/images/icons/key.gif"></div>
+                        <p>培训使用的求职技能，拓展职业社交圈等方式，帮助毕业留学生找到满意的工作。</p>
+                    </div>
                 </div>
-                <div class="info">
-                    <div class="img"><img src="app/images/icons/box.gif"></div>
-                    <p>CACA以帮助毕业的国际留学生顺利进入本地就业市场为使命，通过评估目前职业现状，设计适合的职业规划。</p>
+            </div>
+            <div class="clearFloat"></div>
+            <div class="rightside col-sm-12 col-md-7">
+                <div class="canvas"></div>
+                <div #scroll class="scrollbar" (mousedown)="onDrag($event, scroll, container, mentorList, 'scrollbar')" ></div>
+                <div #container class="wrap">
+                    <div #mentorList class="mentorList" (mousedown)="onDrag($event, scroll, container, mentorList, 'content')">
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                        <div class="mentor">
+                            <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
+                            <div class="intro">
+                                <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
+                                <div class="arrows"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info">
-                    <div class="img"><img src="app/images/icons/key.gif"></div>
-                    <p>培训使用的求职技能，拓展职业社交圈等方式，帮助毕业留学生找到满意的工作。</p>
+                <div class="bottomLine"></div>
+            </div>
+            <div class="clear_float"></div>
+            <div class="corp">
+                <div class="corpWrap">
+                    <a href="#">
+                        <img src="app/images/partners/oiec.jpg" alt="OIEC" title="OIEC">
+                    </a>
+                    <a href="#">
+                        <img src="app/images/partners/smartcell.jpg" alt="SmartCell" title="SmartCell">
+                    </a>
+                    <a href="#">
+                        <img src="app/images/partners/ottawazine.jpg" alt="Ottawazine" title="Ottawazine">
+                    </a>
+                    <a href="#">
+                        <img src="app/images/partners/ottawazine.jpg" alt="Ottawazine" title="Ottawazine">
+                    </a>
+                    <a href="#">
+                        <img src="app/images/partners/oiec.jpg" alt="OIEC" title="OIEC">
+                    </a>
                 </div>
+                <p>CANA在Corporation Members的支持下积极致力于成为稳定运营的非盈利组织，促进加拿大华人社区发展的社会力量</p>
             </div>
         </div>
-        <div class="clearFloat"></div>
-        <div class="rightside col-sm-12 col-md-7">
-            <div class="canvas"></div>
-            <div #scroll class="scrollbar" (mousedown)="onDrag($event, scroll, container, mentorList, 'scrollbar')" ></div>
-            <div #container class="wrap">
-                <div #mentorList class="mentorList" (mousedown)="onDrag($event, scroll, container, mentorList, 'content')">
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                    <div class="mentor">
-                        <div class="img"><div class="frame"><img src="app/images/samples/IMG_2529.jpg"></div></div>
-                        <div class="intro">
-                            <p><b>李</b><span>楠</span>，CANA创始人及常任理事之一。加拿大注册会计师（CPA，CGA）。毕业于卡尔顿大学商学院会计专业，六年会计事务所工作经验。现就职于SmartCell Communication 担任Controller。</p>
-                            <div class="arrows"></div>
-                        </div>
-                    </div>
-                </div>
+    </div>
+    <h3 class="slide_title">几年的留学生活转瞬即逝，不知不觉间发现已是独自面对出入职场的挑战。由于大多数在校期间仅忙于功课，导致缺乏相关工作经验成为最大的挑战。</h3>
+    <div #slide class="slide">
+        <div class="pictures">
+            <div id="1" class="pic_wrap">
+                <div class="picture"></div>
+                <p>Description for the photo</p>
             </div>
-            <div class="bottomLine"></div>
+            <div id="2" class="pic_wrap">
+                <div class="picture"></div>
+                <p>Description for the photo</p>
+            </div>
+            <div id="3" class="pic_wrap active">
+                <div class="picture"></div>
+                <p>Description for the photo asd asdasd asd a asdasd asd asd asd asd asd asd asd asd sa das dasdasd asd asd asd asd asd asd asd </p>
+            </div>
+            <div id="4" class="pic_wrap">
+                <div class="picture"></div>
+                <p>Description for the photo</p>
+            </div>
+            <div id="5" class="pic_wrap">
+                <div class="picture"></div>
+                <p>Description for the photo</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <div #button1 data-index=1 class="button activeb" (click)="onButtonClick(button1)"></div>
+            <div #button2 data-index=2 class="button" (click)="onButtonClick(button2)"></div>
+            <div #button3 data-index=3 class="button" (click)="onButtonClick(button3)"></div>
         </div>
     </div>
 </div>

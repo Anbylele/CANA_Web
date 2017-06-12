@@ -1,5 +1,6 @@
 import {Component, ElementRef, ViewChild , HostListener} from '@angular/core';
-import {listeners} from "cluster";
+import {AppUtil} from '../../util/app.util';
+import {Element} from '../../model/Element';
 
 @Component({
     moduleId: module.id,
@@ -12,16 +13,49 @@ export class AboutComponent{
     @ViewChild("mentorList") mentorList: ElementRef;
     @ViewChild("container") container: ElementRef;
     @ViewChild("scroll") scroll: ElementRef;
+    @ViewChild("slide") slide: ElementRef;
 
-
+    //HTML elements
     private oMentorList: any;
     private mentorIntro:any;
     private mentorImage: any;
     private mentor: any;
     private oScroll: any;
     private oContainer: any;
+    private oSlide: any;
+    private oPictures: any;
+    private picItems: any[];
+    private pictures: any[];
+    private discriptions: any[];
+    private buttons: any[];
+    private picAttributes: [Element];
 
-    constructor(){
+    //variables
+    private slideDone: boolean;
+
+    //data
+    private eventPictures: any[];
+
+    constructor(
+        private appUtil: AppUtil
+    ){}
+
+    ngOnInit(): void {
+        this.eventPictures = [
+            {
+                "url": "app/images/events/DSC04960.jpg",
+                "discription": "Description for the photo1"
+            },
+            {
+                "url": "app/images/events/DSC04908.jpg",
+                "discription": "Description for the photo2"
+            },
+            {
+                "url": "app/images/events/DSC04939.jpg",
+                "discription": "Description for the photo3"
+            }
+        ];
+        this.slideDone = true;
     }
 
     ngAfterViewInit(): void {
@@ -31,6 +65,26 @@ export class AboutComponent{
         this.mentor = this.oMentorList.querySelectorAll(".mentor");
         this.oScroll = this.scroll.nativeElement;
         this.oContainer = this.container.nativeElement;
+        this.oSlide = this.slide.nativeElement;
+        this.oPictures = this.oSlide.querySelector(".pictures");
+        this.picItems = this.oSlide.querySelectorAll(".pic_wrap");
+        this.pictures = this.oSlide.querySelectorAll(".picture");
+        this.discriptions = this.oSlide.querySelectorAll("p");
+        this.buttons = this.oSlide.querySelectorAll(".button");
+
+        //initialize slide section
+        this.picAttributes = [new Element(),new Element(),new Element(),new Element(),new Element()];
+        this.initializeSlide();
+        this.pictures[0].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
+        this.discriptions[0].innerHTML = this.eventPictures[2].discription;
+        this.pictures[1].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
+        this.discriptions[1].innerHTML = this.eventPictures[0].discription;
+        this.pictures[2].style.backgroundImage = 'url(' + this.eventPictures[1].url + ')';
+        this.discriptions[2].innerHTML = this.eventPictures[1].discription;
+        this.pictures[3].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
+        this.discriptions[3].innerHTML = this.eventPictures[2].discription;
+        this.pictures[4].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
+        this.discriptions[4].innerHTML = this.eventPictures[0].discription;
 
         //handle mentor list mentor picture height
         this.handleMentorIntroWidth();
@@ -42,11 +96,29 @@ export class AboutComponent{
         };
     }
 
+    //handle the situation when window is re-sized
     @HostListener('window:resize', ['$event']) onResize(event): void{
         this.handleMentorIntroWidth();
         this.handleMentorPicHeight();
+        this.initializeSlide();
     }
 
+    //handle slide section
+    initializeSlide(): void {
+        for(let i=0;i<this.picItems.length;i++) {
+            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 330) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 610*(i - 2));
+            this.picAttributes[i].top = this.picItems[i].offsetTop;
+            this.picAttributes[i].width = this.picItems[i].offsetWidth;
+            this.picAttributes[i].height = this.pictures[i].offsetHeight;
+
+            this.picItems[i].style.left = this.picAttributes[i].left + "px";
+            this.picItems[i].style.top = this.picAttributes[i].top + "px";
+            this.picItems[i].style.width = this.picAttributes[i].width + "px";
+            this.pictures[i].style.height = this.picAttributes[i].height + "px";
+        }
+    }
+
+    //mentor info section layout responsive
     handleMentorPicHeight(): void {
         for(let i=0;i<this.mentorIntro.length;i++) {
             this.mentorImage[i].style.height = this.mentorIntro[i].offsetHeight + "px";
@@ -66,14 +138,15 @@ export class AboutComponent{
         }
     }
 
+    //mentor info section scroll
     onDrag(event, scrollBar, container, mentorList, type): void {
         event.stopPropagation();
         event.preventDefault();
         let timer;
         let init = {
-            initialY: event.screenY,
+            initialY: event.pageY,
             speed: 0,
-            change: event.screenY,
+            change: event.pageY,
             resistance: 1.1
         };
         let onMove, top, bottom;
@@ -109,9 +182,9 @@ export class AboutComponent{
         let timer;
         let e = event.touches[0];
         let init = {
-            initialY: e.screenY,
+            initialY: e.pageY,
             speed: 0,
-            change: e.screenY,
+            change: e.pageY,
             resistance: 1.1,
             triggered: false,
             markY: 0,
@@ -171,10 +244,10 @@ export class AboutComponent{
         event.stopPropagation();
         event.preventDefault();
         let e = event.touches ? event.touches[0] : event;
-        let mouseY = e.screenY;
+        let mouseY = e.pageY;
         let moveY = mouseY - init.initialY;
-        init.speed = e.screenY - init.change;
-        init.change = e.screenY;
+        init.speed = e.pageY - init.change;
+        init.change = e.pageY;
         let Y = moveY + barTop;
         if(Y < 0) {
             Y = 0;
@@ -193,10 +266,10 @@ export class AboutComponent{
             event.preventDefault();
         }
         let e = event.touches ? event.touches[0] : event;
-        let mouseY = e.screenY;
+        let mouseY = e.pageY;
         let moveY = mouseY - init.initialY;
-        init.speed = e.screenY - init.change;
-        init.change = e.screenY;
+        init.speed = e.pageY - init.change;
+        init.change = e.pageY;
         let Y = moveY + contentTop;
         if(Y >= 0) {
             Y = 0;
@@ -208,14 +281,14 @@ export class AboutComponent{
         if (Y === 0 || Y === -bottom){
             if(event.touches){
                 if(!init.triggered) {
-                    init.markY = e.screenY;
+                    init.markY = e.pageY;
                     init.triggered = true;
                     init.scrollTop = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
                 }
                 if(document.documentElement.scrollTop) {
-                    document.documentElement.scrollTop = init.scrollTop - e.screenY + init.markY;
+                    document.documentElement.scrollTop = init.scrollTop - e.pageY + init.markY;
                 }else {
-                    document.body.scrollTop = init.scrollTop - e.screenY + init.markY;
+                    document.body.scrollTop = init.scrollTop - e.pageY + init.markY;
                 }
             }
         }
@@ -223,5 +296,115 @@ export class AboutComponent{
         let range = container.offsetHeight - scrollBar.offsetHeight;
         mentorList.style.top = Y +  "px";
         scrollBar.style.top = -(range * percent) + "px";
+    }
+
+    //desktop slide section
+    onButtonClick(button:any): void {
+        let active = this.oSlide.querySelector(".activeb");
+        if(button.className.toUpperCase().indexOf("ACTIVEB") !== -1 || !this.slideDone) {
+            return null;
+        }
+        this.slideDone = false;
+        //button animation
+        for(let i=0;i<this.buttons.length;i++) {
+            this.buttons[i].className = "button";
+        }
+        button.className = "button activeb";
+        //pictures animation
+        let direction = active.dataset.index - button.dataset.index;
+        switch(direction){
+            case -1:
+            case 2:
+                this.moveLeft();
+                return;
+            case 1:
+            case -2:
+                this.moveRight();
+                return;
+            default:
+                return;
+        }
+    }
+
+    moveLeft(): void {
+        let arrr1: any[] = [];
+        let arrr2: any[] = [];
+        let arrr3: any[] = [];
+        this.pictures[this.pictures.length-1].style.backgroundImage = this.pictures[1].style.backgroundImage;
+        this.discriptions[this.pictures.length-1].innerHTML = this.discriptions[1].innerHTML;
+        for(let i=0;i<this.picItems.length;i++) {
+            if(i === 3) {
+                this.picItems[i].className = "pic_wrap active";
+            }else {
+                this.picItems[i].className = "pic_wrap";
+            }
+            if(i > 0) {
+                arrr1.push(this.picItems[i]);
+                arrr2.push(this.pictures[i]);
+                arrr3.push(this.discriptions[i]);
+                this.appUtil.myMove_yzy(this.picItems[i], {
+                    width: this.picAttributes[i-1].width,
+                    left: this.picAttributes[i-1].left,
+                    top: this.picAttributes[i-1].top,
+                }, ()=>{
+                    this.slideDone = true;
+                });
+                this.appUtil.myMove_yzy(this.pictures[i], {
+                    height: this.picAttributes[i-1].height
+                })
+            }else {
+                this.picItems[i].style.width = this.picAttributes[this.picItems.length - 1].width + "px";
+                this.picItems[i].style.left = this.picAttributes[this.picItems.length - 1].left + "px";
+                this.picItems[i].style.top = this.picAttributes[this.picItems.length - 1].top + "px";
+                this.pictures[i].style.height = this.picAttributes[this.picItems.length - 1].height + "px";
+            }
+        }
+        arrr1.push(this.picItems[0]);
+        arrr2.push(this.pictures[0]);
+        arrr3.push(this.discriptions[0]);
+        this.picItems = arrr1;
+        this.pictures = arrr2;
+        this.discriptions = arrr3;
+    }
+
+    moveRight(): void {
+        let arrl1: any[] = [];
+        let arrl2: any[] = [];
+        let arrl3: any[] = [];
+        this.pictures[0].style.backgroundImage = this.pictures[3].style.backgroundImage;
+        this.discriptions[0].innerHTML = this.discriptions[3].innerHTML;
+        arrl1.push(this.picItems[this.picItems.length-1]);
+        arrl2.push(this.pictures[this.picItems.length-1]);
+        arrl3.push(this.discriptions[this.picItems.length-1]);
+        for(let i=0;i<this.picItems.length;i++) {
+            if(i === 1) {
+                this.picItems[i].className = "pic_wrap active";
+            }else {
+                this.picItems[i].className = "pic_wrap";
+            }
+            if(i < this.picItems.length-1) {
+                arrl1.push(this.picItems[i]);
+                arrl2.push(this.pictures[i]);
+                arrl3.push(this.discriptions[i]);
+                this.appUtil.myMove_yzy(this.picItems[i], {
+                    width: this.picAttributes[i+1].width,
+                    left: this.picAttributes[i+1].left,
+                    top: this.picAttributes[i+1].top,
+                }, ()=>{
+                    this.slideDone = true;
+                });
+                this.appUtil.myMove_yzy(this.pictures[i], {
+                    height: this.picAttributes[i+1].height
+                })
+            }else {
+                this.picItems[i].style.width = this.picAttributes[0].width + "px";
+                this.picItems[i].style.left = this.picAttributes[0].left + "px";
+                this.picItems[i].style.top = this.picAttributes[0].top + "px";
+                this.pictures[i].style.height = this.picAttributes[0].height + "px";
+            }
+        }
+        this.picItems = arrl1;
+        this.pictures = arrl2;
+        this.discriptions = arrl3;
     }
 }

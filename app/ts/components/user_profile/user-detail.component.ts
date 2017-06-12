@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { UserService } from '../../service/user.service';
-import { User } from '../../model/user';
+import { User } from '../../model/User';
 
 @Component({
     moduleId: module.id,

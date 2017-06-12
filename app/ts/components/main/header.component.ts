@@ -75,12 +75,12 @@ export class HeaderComponent{
             this.oHeader.style.position = "fixed";
             this.oHeader.style.top = "0";
             this.oLoginButton.style.backgroundColor = "#c7e5dd";
-            this.oHeader.style.borderBottom = "2px solid #e8e8e8";
+            this.oHeader.style.borderBottom = "1px solid #e8e8e8";
         } else {
             this.oHeader.style.backgroundColor = "transparent";
             this.oHeader.style.position = "relative";
             this.oLoginButton.style.backgroundColor = "#ffffff";
-            this.oHeader.style.borderBottom = "2px solid transparent";
+            this.oHeader.style.borderBottom = "1px solid transparent";
         }
     }
 
