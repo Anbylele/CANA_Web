@@ -9,7 +9,7 @@ import { UserService } from '../../service/user.service';
     moduleId: module.id,
     selector: 'cana-dashboard',
     templateUrl: '../../../template/dashboard.component.html',
-    styleUrls:['../../style/css/dashboard.component.css']
+    styleUrls:['../../../style/css/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
     users: User[] = [];

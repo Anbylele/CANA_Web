@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'admin-login',
     templateUrl: '../../../template/admin-login.component.html',
-    styleUrls: ['../../style/css/admin-login.component.css']
+    styleUrls: ['../../../style/css/admin-login.component.css']
 })
 
 export class AdminLoginComponent{

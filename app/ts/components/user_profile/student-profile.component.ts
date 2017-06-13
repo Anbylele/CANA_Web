@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'student-profile',
     templateUrl: '../../../template/student-profile.component.html',
-    styleUrls: ['../../style/css/student-profile.component.css']
+    styleUrls: ['../../../style/css/student-profile.component.css']
 })
 
 export class StudentProfileComponent{

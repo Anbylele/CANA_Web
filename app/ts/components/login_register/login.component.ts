@@ -7,7 +7,7 @@ import { AppUtil } from '../../util/app.util';
     selector: 'cana-login',
     inputs:['loginElem'],
     templateUrl: '../../../template/login.component.html',
-    styleUrls: ['../../style/css/login.component.css']
+    styleUrls: ['../../../style/css/login.component.css']
 })
 
 export class LoginComponent implements AfterViewInit{

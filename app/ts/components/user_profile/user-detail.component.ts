@@ -10,7 +10,7 @@ import { User } from '../../model/User';
     selector: 'cana-user-detail',
     templateUrl: '../../../template/user-detail.component.html',
     inputs: ['user'],
-    styleUrls: ['../../style/css/user-detail.component.css']
+    styleUrls: ['../../../style/css/user-detail.component.css']
 })
 
 export class UserDetailComponent implements  OnInit{

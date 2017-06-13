@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     moduleId: module.id,
     selector: 'teacher-profile',
     templateUrl: '../../../template/teacher-profile.component.html',
-    styleUrls: ['../../style/css/teacher-profile.component.css']
+    styleUrls: ['../../../style/css/teacher-profile.component.css']
 })
 
 export class TeacherProfileComponent{
