@@ -14,6 +14,7 @@ export class AboutComponent{
     @ViewChild("container") container: ElementRef;
     @ViewChild("scroll") scroll: ElementRef;
     @ViewChild("slide") slide: ElementRef;
+    @ViewChild("mslide") mslide: ElementRef;
 
     //HTML elements
     private oMentorList: any;
@@ -29,9 +30,17 @@ export class AboutComponent{
     private discriptions: any[];
     private buttons: any[];
     private picAttributes: [Element];
+    private oMSlide: any;
+    private oMPictures: any;
+    private mPicItems: any[];
+    private mPictures: any[];
+    private mDiscriptions: any[];
+    private mButtons: any[];
+    private oButtons: any;
 
     //variables
     private slideDone: boolean;
+    private mSlideDone: boolean;
 
     //data
     private eventPictures: any[];
@@ -56,6 +65,7 @@ export class AboutComponent{
             }
         ];
         this.slideDone = true;
+        this.mSlideDone = true;
     }
 
     ngAfterViewInit(): void {
@@ -71,20 +81,25 @@ export class AboutComponent{
         this.pictures = this.oSlide.querySelectorAll(".picture");
         this.discriptions = this.oSlide.querySelectorAll("p");
         this.buttons = this.oSlide.querySelectorAll(".button");
+        this.oMSlide = this.mslide.nativeElement;
+        this.oMPictures = this.oMSlide.querySelector(".pictures");
+        this.mPicItems = Array.from(this.oMSlide.querySelectorAll(".pic_wrap"));
+        this.mPictures = this.oMSlide.querySelectorAll(".picture");
+        this.mDiscriptions = this.oMSlide.querySelectorAll("p");
+        this.mButtons = this.oMSlide.querySelectorAll(".button");
+        this.oButtons = this.oMSlide.querySelector(".buttons");
 
         //initialize slide section
         this.picAttributes = [new Element(),new Element(),new Element(),new Element(),new Element()];
         this.initializeSlide();
-        this.pictures[0].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
-        this.discriptions[0].innerHTML = this.eventPictures[2].discription;
-        this.pictures[1].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
-        this.discriptions[1].innerHTML = this.eventPictures[0].discription;
-        this.pictures[2].style.backgroundImage = 'url(' + this.eventPictures[1].url + ')';
-        this.discriptions[2].innerHTML = this.eventPictures[1].discription;
-        this.pictures[3].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
-        this.discriptions[3].innerHTML = this.eventPictures[2].discription;
-        this.pictures[4].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
-        this.discriptions[4].innerHTML = this.eventPictures[0].discription;
+        this.initURL();
+        if(document.documentElement.offsetWidth < 700) {
+            this.oSlide.style.display = "none";
+        }else {
+            this.oMSlide.style.display = "none";
+        }
+        this.mInitSlide();
+        this.mInitURL();
 
         //handle mentor list mentor picture height
         this.handleMentorIntroWidth();
@@ -100,7 +115,58 @@ export class AboutComponent{
     @HostListener('window:resize', ['$event']) onResize(event): void{
         this.handleMentorIntroWidth();
         this.handleMentorPicHeight();
-        this.initializeSlide();
+
+        this.oSlide.style.display = document.documentElement.offsetWidth < 700 ? "none" :  "block";
+        this.resetSlide();
+
+        this.oMSlide.style.display = document.documentElement.offsetWidth < 700 ? "block" :  "none";
+        this.mInitSlide();
+    }
+
+    mInitSlide(): void {
+        for(let i=0;i<this.mPicItems.length;i++) {
+            this.mPictures[i].style.height = (this.mPicItems[i].offsetWidth * 0.7) + "px";
+        }
+        this.oMSlide.style.height = (this.mPicItems[0].offsetHeight + this.oButtons.offsetHeight) + "px";
+    }
+
+    //initialize picture urls
+    initURL(): void {
+        this.pictures[0].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
+        this.discriptions[0].innerHTML = this.eventPictures[2].discription;
+        this.pictures[1].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
+        this.discriptions[1].innerHTML = this.eventPictures[0].discription;
+        this.pictures[2].style.backgroundImage = 'url(' + this.eventPictures[1].url + ')';
+        this.discriptions[2].innerHTML = this.eventPictures[1].discription;
+        this.pictures[3].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
+        this.discriptions[3].innerHTML = this.eventPictures[2].discription;
+        this.pictures[4].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
+        this.discriptions[4].innerHTML = this.eventPictures[0].discription;
+    }
+
+    //initialize picture urls for mobile
+    mInitURL(): void {
+        this.mPictures[0].style.backgroundImage = 'url(' + this.eventPictures[0].url + ')';
+        this.mDiscriptions[0].innerHTML = this.eventPictures[0].discription;
+        this.mPictures[1].style.backgroundImage = 'url(' + this.eventPictures[1].url + ')';
+        this.mDiscriptions[1].innerHTML = this.eventPictures[1].discription;
+        this.mPictures[2].style.backgroundImage = 'url(' + this.eventPictures[2].url + ')';
+        this.mDiscriptions[2].innerHTML = this.eventPictures[2].discription;
+    }
+
+    //initialize slide section after window resize
+    resetSlide(): void {
+        this.slideDone = true;
+        for(let i=0;i<this.picItems.length;i++) {
+            clearInterval(this.picItems[i].timer);
+            clearInterval(this.pictures[i].timer);
+            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 330) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 610*(i - 2));
+
+            this.picItems[i].style.left = this.picAttributes[i].left + "px";
+            this.picItems[i].style.top = this.picAttributes[i].top + "px";
+            this.picItems[i].style.width = this.picAttributes[i].width + "px";
+            this.pictures[i].style.height = this.picAttributes[i].height + "px";
+        }
     }
 
     //handle slide section
@@ -299,7 +365,7 @@ export class AboutComponent{
     }
 
     //desktop slide section
-    onButtonClick(button:any): void {
+    onButtonClick(button: any): void {
         let active = this.oSlide.querySelector(".activeb");
         if(button.className.toUpperCase().indexOf("ACTIVEB") !== -1 || !this.slideDone) {
             return null;
@@ -406,5 +472,58 @@ export class AboutComponent{
         this.picItems = arrl1;
         this.pictures = arrl2;
         this.discriptions = arrl3;
+    }
+
+    onMobileButtonClick(button: any): void {
+        let active = this.oMSlide.querySelector(".activeb");
+        if(button.className.toUpperCase().indexOf("ACTIVEB") !== -1 || !this.mSlideDone) {
+            return null;
+        }
+        this.mSlideDone = false;
+        //button animation
+        for(let i=0;i<this.mButtons.length;i++) {
+            this.mButtons[i].className = "button";
+        }
+        button.className = "button activeb";
+        //pictures animation
+        let direction = active.dataset.index - button.dataset.index;
+        switch(direction){
+            case -1:
+            case 2:
+                this.mMoveLeft();
+                return;
+            case 1:
+            case -2:
+                this.mMoveRight();
+                return;
+            default:
+                return;
+        }
+    }
+
+    mMoveRight(): void {
+        for(let i=0;i<this.mPicItems.length;i++) {
+            this.mPicItems[i].style.zIndex = (this.mPicItems.length - i) + "";
+        }
+        this.mPicItems.unshift(this.mPicItems.pop());
+        this.mPicItems[0].className = "pic_wrap left";
+        this.mPicItems[1].className = "pic_wrap middle";
+        this.mPicItems[2].className = "pic_wrap right";
+        setTimeout(()=>{
+            this.mSlideDone = true;
+        }, 600);
+    }
+
+    mMoveLeft(): void {
+        for(let i=0;i<this.mPicItems.length;i++) {
+            this.mPicItems[i].style.zIndex = i + "";
+        }
+        this.mPicItems.push(this.mPicItems.shift());
+        this.mPicItems[0].className = "pic_wrap left";
+        this.mPicItems[1].className = "pic_wrap middle";
+        this.mPicItems[2].className = "pic_wrap right";
+        setTimeout(()=>{
+            this.mSlideDone = true;
+        }, 600);
     }
 }

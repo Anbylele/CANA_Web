@@ -102,23 +102,23 @@
     <h3 class="slide_title">几年的留学生活转瞬即逝，不知不觉间发现已是独自面对出入职场的挑战。由于大多数在校期间仅忙于功课，导致缺乏相关工作经验成为最大的挑战。</h3>
     <div #slide class="slide">
         <div class="pictures">
-            <div id="1" class="pic_wrap">
+            <div class="pic_wrap">
                 <div class="picture"></div>
                 <p>Description for the photo</p>
             </div>
-            <div id="2" class="pic_wrap">
+            <div class="pic_wrap">
                 <div class="picture"></div>
                 <p>Description for the photo</p>
             </div>
-            <div id="3" class="pic_wrap active">
+            <div class="pic_wrap active">
                 <div class="picture"></div>
                 <p>Description for the photo asd asdasd asd a asdasd asd asd asd asd asd asd asd asd sa das dasdasd asd asd asd asd asd asd asd </p>
             </div>
-            <div id="4" class="pic_wrap">
+            <div class="pic_wrap">
                 <div class="picture"></div>
                 <p>Description for the photo</p>
             </div>
-            <div id="5" class="pic_wrap">
+            <div class="pic_wrap">
                 <div class="picture"></div>
                 <p>Description for the photo</p>
             </div>
@@ -127,6 +127,27 @@
             <div #button1 data-index=1 class="button activeb" (click)="onButtonClick(button1)"></div>
             <div #button2 data-index=2 class="button" (click)="onButtonClick(button2)"></div>
             <div #button3 data-index=3 class="button" (click)="onButtonClick(button3)"></div>
+        </div>
+    </div>
+    <div #mslide class="slide_mobile">
+        <div class="pictures">
+            <div #pic1 class="pic_wrap left">
+                <div class="picture"></div>
+                <p #p>Description for the photo 1</p>
+            </div>
+            <div #pic2 class="pic_wrap middle">
+                <div class="picture"></div>
+                <p>Description for the photo 2</p>
+            </div>
+            <div #pic3 class="pic_wrap right">
+                <div class="picture"></div>
+                <p>Description for the photo 3</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <div #mbutton1 data-index=1 class="button activeb" (click)="onMobileButtonClick(mbutton1)"></div>
+            <div #mbutton2 data-index=2 class="button" (click)="onMobileButtonClick(mbutton2)"></div>
+            <div #mbutton3 data-index=3 class="button" (click)="onMobileButtonClick(mbutton3)"></div>
         </div>
     </div>
 </div>
