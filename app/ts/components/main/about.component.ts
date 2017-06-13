@@ -15,6 +15,7 @@ export class AboutComponent{
     @ViewChild("scroll") scroll: ElementRef;
     @ViewChild("slide") slide: ElementRef;
     @ViewChild("mslide") mslide: ElementRef;
+    @ViewChild("canvas") canvas: ElementRef;
 
     //HTML elements
     private oMentorList: any;
@@ -37,6 +38,7 @@ export class AboutComponent{
     private mDiscriptions: any[];
     private mButtons: any[];
     private oButtons: any;
+    private oCanvas: any;
 
     //variables
     private slideDone: boolean;
@@ -69,6 +71,7 @@ export class AboutComponent{
     }
 
     ngAfterViewInit(): void {
+        this.oCanvas = this.canvas.nativeElement;
         this.oMentorList = this.mentorList.nativeElement;
         this.mentorIntro = this.oMentorList.querySelectorAll(".intro");
         this.mentorImage = this.oMentorList.querySelectorAll(".img");
@@ -88,6 +91,9 @@ export class AboutComponent{
         this.mDiscriptions = this.oMSlide.querySelectorAll("p");
         this.mButtons = this.oMSlide.querySelectorAll(".button");
         this.oButtons = this.oMSlide.querySelector(".buttons");
+
+        //initialize canvas for mentor section
+        this.oCanvas.style.width = document.documentElement.offsetWidth + "px";
 
         //initialize slide section
         this.picAttributes = [new Element(),new Element(),new Element(),new Element(),new Element()];
@@ -113,6 +119,7 @@ export class AboutComponent{
 
     //handle the situation when window is re-sized
     @HostListener('window:resize', ['$event']) onResize(event): void{
+        this.oCanvas.style.width = document.documentElement.offsetWidth + "px";
         this.handleMentorIntroWidth();
         this.handleMentorPicHeight();
 

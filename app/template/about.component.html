@@ -19,7 +19,7 @@
             </div>
             <div class="clearFloat"></div>
             <div class="rightside col-sm-12 col-md-7">
-                <div class="canvas"></div>
+                <div #canvas class="canvas"></div>
                 <div #scroll class="scrollbar" (mousedown)="onDrag($event, scroll, container, mentorList, 'scrollbar')" ></div>
                 <div #container class="wrap">
                     <div #mentorList class="mentorList" (mousedown)="onDrag($event, scroll, container, mentorList, 'content')">
