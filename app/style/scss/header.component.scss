@@ -8,7 +8,7 @@
   overflow: hidden;
 
   header {
-    $header-height: 78px;
+    $header-height: 70px;
     position: relative;
     height: $header-height;
     z-index: 8;
@@ -19,14 +19,14 @@
         content: "";
       }
       width: 100%;
-      transition: background-color 0.2s;
+      transition: background-color 0.8s;
       height: $header-height;
       border-bottom: 1px solid transparent;
 
       & > div {
-        $height: 42px;
+        $height: 35px;
         position: relative;
-        max-width: 960px;
+        max-width: 880px;
         padding-top: 8px;
         margin: 0 auto;
         padding: 18px;
@@ -64,11 +64,12 @@
 
           .nav {
             position: relative;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             float: left;
             border: none;
+            color: $text-color-darken;
             height: 40%;
-            font-weight: 500;
+            font-weight: 600;
             margin-left: 22px;
             margin-top: 6px;
             z-index: 2;
@@ -78,24 +79,27 @@
             position: absolute;
             height: calc(40% + 16px);
             width: 0;
-            border-bottom: 4px solid $font-color;
+            border-bottom: 3px solid $font-color;
           }
         }
 
         button.login {
-          transition: background-color 0.2s;
+          transition: 0.2s;
           float: right;
           height: $height;
           line-height: $height;
-          width: 170px;
+          width: 138px;
+          font-size: 1.2rem;
+          font-weight: 200;
           border-radius: $height;
-          border-color: #ffffff;
+          border:none;
           background: #ffffff;
           @media (max-width: 800px) {
             display: none;
           }
           &:hover {
-            opacity: 0.8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: $text-color-darken;
           }
         }
 
@@ -133,29 +137,39 @@
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 90px;
     @media (max-width: 520px) {
       padding: 0 18px;
       text-align: left;
-      margin-top: 36px;
+      margin-top: 30px;
     }
 
     h3 {
       padding: 0 18px;
       margin-bottom: 16px;
       font-weight: 500;
-      font-size: 3rem;
+      font-size: 2.5rem;
+      color: $text-color-darken;
+      font-weight: bold;
       @media (max-width: 520px) {
-        line-height: 5rem;
+        padding: 0 16px;
+        line-height: 5.5rem;
         margin-bottom: 12px;
+        font-size: 3rem;
+        font-weight: normal;
       }
     }
 
     p {
       padding: 0 18px;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
+      color: $text-color-darken;
+      font-weight: 100;
       @media (max-width: 520px) {
-        line-height: 3.2rem;
+        padding: 0 16px;
+        line-height: 3.5rem;
+        font-size: 1.8rem;
+        font-weight: normal;
       }
     }
   }
@@ -163,7 +177,7 @@
   .welcome {
     position: relative;
     width: 500px;
-    height: 330px;
+    height: 310px;
     margin: 0 auto;
     margin-top: 60px;
     @media (max-width: 520px) {
@@ -180,26 +194,28 @@
       }
 
       .pencil {
-        top: -200px;
-        left: 10px;
-        height: 900px;
+        top: 200px;
+        left: 435px;
+        height: 310px;
+        filter: drop-shadow(-2px 8px 3px rgba(0, 0, 0, 0.8));
 
         @media (max-width: 520px) {
-          height: 720px;
-          top: -200px;
-          left: -76px;
+          height: 220px;
+          top: 170px;
+          left: 256px;
         }
       }
 
       .paper {
-        top: -536px;
-        left: -520px;
-        width: 1500px;
+        top: 38px;
+        left: 80px;
+        width: 310px;
+        box-shadow: -25px 55px 80px 0px rgba(0, 0, 0, 0.61);
 
         @media (max-width: 520px) {
-          width: 1000px;
-          top: -340px;
-          left: -370px;
+          width: 190px;
+          top: 70px;
+          left: 30px;
         }
       }
     }

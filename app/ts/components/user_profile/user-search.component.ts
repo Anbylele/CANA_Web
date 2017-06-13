@@ -8,7 +8,7 @@ import { User } from '../../model/user';
     moduleId: module.id,
     selector: 'user-search',
     templateUrl: '../../../template/user-search.component.html',
-    styleUrls: [ '../../style/css/user-search.component.css' ],
+    styleUrls: [ '../../../style/css/user-search.component.css' ],
     providers: [UserSearchService]
 })
 export class UserSearchComponent implements OnInit {

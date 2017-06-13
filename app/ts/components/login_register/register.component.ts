@@ -5,7 +5,7 @@ import { AppUtil } from '../../util/app.util';
     moduleId: module.id,
     selector: 'cana-register',
     templateUrl: '../../../template/register.component.html',
-    styleUrls: ['../../style/css/register.component.css']
+    styleUrls: ['../../../style/css/register.component.css']
 })
 
 export class RegisterComponent implements AfterViewInit{

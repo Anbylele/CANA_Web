@@ -7,7 +7,7 @@ import { UserService } from '../../service/user.service';
     moduleId: module.id,
     selector: 'cana-useres',
     templateUrl: '../../../template/user.component.html',
-    styleUrls: ['../../style/css/user.component.css']
+    styleUrls: ['../../../style/css/user.component.css']
 })
 
 export class UserComponent implements OnInit{

@@ -127,7 +127,7 @@
   color: $color;
   display: inline-block;
   font-size: $textsize;
-  font-weight: bold;
+  font-weight: normal;
   @include linear-gradient ($base-color, $stop-gradient);
   padding: $padding;
   text-decoration: none;
@@ -346,7 +346,7 @@
   color: $color;
   display: inline-block;
   font-size: $textsize;
-  font-weight: bold;
+  font-weight:normal;
   padding: $padding;
   text-decoration: none;
   background-clip: padding-box;
