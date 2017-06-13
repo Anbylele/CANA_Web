@@ -46,6 +46,10 @@
         height: $height;
         line-height: $height;
         width: 149px;
+        @media (max-width: $max-width) {
+          display: block;
+          margin: 0 auto;
+        }
         &:hover {
           background-color: $orange-button-hover;
         }
@@ -83,7 +87,6 @@
     .right {
       padding-right: 0;
       padding-left: 47px;
-      text-indent: 6px;
       font-size: 1.5rem;
       @media (max-width: $max-width) {
         margin-top: 66px;
@@ -94,21 +97,34 @@
         }
       }
       h3 {
+        margin-left: 6px;
         font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 18px;
       }
       p {
+        margin-left: 6px;
         font-size: 1.5rem;
         margin-top: 12px;
       }
       .medias {
         margin-top: 18px;
+        margin-left: 6px;
         a {
           float: left;
           margin-right: 10px;
+          @media (max-width: 820px) {
+            margin-right: 6px;
+          }
+          @media (max-width: $max-width) {
+            margin-left: 10px;
+            margin-right: 10px;
+          }
           img {
             height: 25px;
+          }
+          &:nth-of-type(4) {
+            margin-right: 0;
           }
         }
         &:after {

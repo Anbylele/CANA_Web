@@ -1,6 +1,6 @@
 import {Component, ElementRef, ViewChild , HostListener} from '@angular/core';
 import {AppUtil} from '../../util/app.util';
-import {Element} from '../../model/Element';
+import {Element} from '../../model/element';
 
 @Component({
     moduleId: module.id,
