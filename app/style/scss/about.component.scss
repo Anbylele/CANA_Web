@@ -53,6 +53,10 @@
           p {
             margin-top: 16px;
             line-height: 3rem;
+            font-size: 1.3rem;
+            color: $font-color;
+            padding-left: 11px;
+            font-weight: lighter;
           }
         }
       }
@@ -68,9 +72,9 @@
     .rightside {
       $mobile-width: 992px;
       position: relative;
-      top: -258px;
+      margin-top: -258px;
       @media (max-width: $mobile-width) {
-        top: 0;
+        margin-top: 0;
       }
       @media (max-width: 600px) {
         padding-left: 0;
@@ -107,7 +111,7 @@
       .wrap {
         position: relative;
         overflow: hidden;
-        height: 920px;
+        height: 820px;
         @media (max-width: $mobile-width) {
           height:500px;
         }
@@ -125,7 +129,7 @@
               padding: 0 0 50px 0;
             }
             .img {
-              $width: 55px;
+              $width: 45px;
               width: $width;
               position: relative;
               .frame {
@@ -146,15 +150,19 @@
             .intro {
               border-radius: 4px;
               box-sizing: border-box;
-              width: 470px;
+              width: 420px !important;
+              font-size: 1.1rem;
+              line-height: 2.2rem;
               b {
-                font-size: 3rem;
+                font-size: 2rem;
+                font-weight: 500;
                 @media (max-width: 600px) {
-                  font-size: 2.6rem;
+                  font-size: 1.6rem;
                 }
               }
               @media (max-width: 600px) {
                 font-size: 1.4rem;
+                width: 230px !important;
               }
             }
             &:nth-of-type(odd) {
@@ -162,9 +170,11 @@
                 float: left;
               }
               .intro {
+                color:rgba(255, 255, 255, 0.88);
+                font-weight: lighter;
                 position: relative;
                 margin-left: 36px;
-                padding: 10px 27px 10px 37px;
+                padding: 18px 30px 15px 37px;
                 background-color: $chatpop-color;
                 float: left;
                 @media (max-width: 600px) {
@@ -191,10 +201,11 @@
                 float: right;
               }
               .intro {
+                color: $font-color;
                 position: relative;
-                border: 3px solid $orange-button-color;
+                border: 1px solid $orange-button-color;
                 margin-right: 36px;
-                padding: 10px 37px 10px 27px;
+                padding: 18px 27px 15px 30px;
                 background-color: #fff;
                 float: right;
                 @media (max-width: 600px) {
@@ -223,9 +234,9 @@
         position: relative;
         width: 200%;
         left: 53px;
-        margin-bottom: 100px;
+        margin-bottom: 60px;
         height: 0;
-        border-bottom: 5px solid $median-gray;
+        border-bottom: 1px solid $median-gray;
         @media (max-width: 991px) {
           border-bottom: 3px solid $median-gray;
         }
@@ -237,9 +248,10 @@
     .corp {
       position: relative;
       text-align: center;
-      top: -183px;
+      top: 0px;
+      padd-top:50px;
       @media (max-width: 992px) {
-        top: -50px;
+        top: 0px;
       }
       .corpWrap {
         line-height: 100px;
@@ -247,17 +259,23 @@
           display: inline-block;
           margin: 0 16px;
           img {
-            height: 40px;
+            height: 38px;
+            @media (max-width: 600px) {
+              height: 25px;
+            }
           }
+
         }
       }
       p {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         line-height: 3.1rem;
-        max-width: 600px;
+        max-width: 500px;
         padding-right: 20px;
         padding-left: 20px;
+        padding-bottom: 100px;
         margin: 42px auto 0;
+        color: $text-color-lighter;
       }
     }
   }
@@ -265,10 +283,10 @@
   .slide_title {
     text-align: center;
     max-width: 600px;
-    padding: 30px 18px 30px;
+    padding: 120px 18px 0px;
     margin: 0 auto;
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: lighter;
     line-height: 3rem;
   }
 
@@ -303,39 +321,39 @@
         &.active {
           opacity: 1;
           top: 72px;
-          box-shadow: 0 0 100px #888;
+          box-shadow: 0 20px 50px 0 rgba(136,136,136,0.53);
           z-index: 2;
-          left: calc(50% - 330px);
-          width: 660px;
+          left: calc(50% - 310px);
+          width: 618px;
           .picture {
-            height: 462px;
+            height: 412px;
           }
         }
         &:nth-of-type(1) {
           left: calc(50% - 1400px);
           .picture {
             background: url("app/images/events/DSC04939.jpg") no-repeat;
-            background-size: cover;
+            background-size: contain;
           }
         }
         &:nth-of-type(2) {
           left: calc(50% - 820px);
           .picture {
             background: url("app/images/events/DSC04960.jpg") no-repeat;
-            background-size: cover;
+            background-size: contain;
           }
         }
         &:nth-of-type(3) {
           .picture {
             background: url("app/images/events/DSC04908.jpg") no-repeat;
-            background-size: cover;
+            background-size: contain;
           }
         }
         &:nth-of-type(4) {
           left: calc(50% + 400px);
           .picture {
             background: url("app/images/events/DSC04939.jpg") no-repeat;
-            background-size: cover;
+            background-size: contain;
           }
         }
         &:nth-of-type(5) {
@@ -343,7 +361,7 @@
           left: calc(50% + 980px);
           .picture {
             background: url("app/images/events/DSC04960.jpg") no-repeat;
-            background-size: cover;
+            background-size: contain;
           }
         }
       }
