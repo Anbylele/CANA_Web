@@ -167,7 +167,7 @@ export class AboutComponent{
         for(let i=0;i<this.picItems.length;i++) {
             clearInterval(this.picItems[i].timer);
             clearInterval(this.pictures[i].timer);
-            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 330) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 610*(i - 2));
+            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 305) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 580*(i - 2));
 
             this.picItems[i].style.left = this.picAttributes[i].left + "px";
             this.picItems[i].style.top = this.picAttributes[i].top + "px";
@@ -179,7 +179,7 @@ export class AboutComponent{
     //handle slide section
     initializeSlide(): void {
         for(let i=0;i<this.picItems.length;i++) {
-            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 330) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 610*(i - 2));
+            this.picAttributes[i].left = i === 2 ? Math.floor(this.oPictures.offsetWidth/2 - 305) : Math.floor((this.oPictures.offsetWidth/2 - 210) + 580*(i - 2));
             this.picAttributes[i].top = this.picItems[i].offsetTop;
             this.picAttributes[i].width = this.picItems[i].offsetWidth;
             this.picAttributes[i].height = this.pictures[i].offsetHeight;
@@ -357,11 +357,6 @@ export class AboutComponent{
                     init.markY = e.pageY;
                     init.triggered = true;
                     init.scrollTop = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
-                }
-                if(document.documentElement.scrollTop) {
-                    document.documentElement.scrollTop = init.scrollTop - e.pageY + init.markY;
-                }else {
-                    document.body.scrollTop = init.scrollTop - e.pageY + init.markY;
                 }
             }
         }
