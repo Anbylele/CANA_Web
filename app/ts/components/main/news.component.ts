@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild, HostListener} from '@angular/core';
 import { AppUtil } from '../../util/app.util';
 
 @Component({
@@ -42,6 +42,11 @@ export class NewsComponent{
             this.aCUnderscores[i].style.width = "0";
             this.aCUnderscores[i].style.left = (this.aCButtons[i].offsetLeft + this.aCButtons[i].offsetWidth / 2) + "px";
         }
+    }
+
+    //handle the situation when window is re-sized
+    @HostListener('window:resize', ['$event']) onResize(event): void{
+
     }
 
     onButtonClick(nav: any): void {

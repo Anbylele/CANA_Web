@@ -13,7 +13,7 @@
   .top_ {
     padding: 80px 0 66px 0;
     .left {
-      padding-right: 120px;
+      padding-right: 136px;
       padding-left: 0;
       @media (max-width: $max-width) {
         padding-right: 0;
@@ -23,6 +23,7 @@
       }
       h3 {
         font-size: 1.5rem;
+        line-height: 2.8rem;
       }
     }
     .right {

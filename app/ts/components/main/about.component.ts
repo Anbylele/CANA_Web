@@ -16,6 +16,7 @@ export class AboutComponent{
     @ViewChild("slide") slide: ElementRef;
     @ViewChild("mslide") mslide: ElementRef;
     @ViewChild("canvas") canvas: ElementRef;
+    @ViewChild("nav") nav: ElementRef;
 
     //HTML elements
     private oMentorList: any;
@@ -39,10 +40,14 @@ export class AboutComponent{
     private mButtons: any[];
     private oButtons: any;
     private oCanvas: any;
+    private oNav: any;
+    private aButtons: any[];
+    private aUnderscores: any[];
 
     //variables
     private slideDone: boolean;
     private mSlideDone: boolean;
+    private slideSpeed: number;
 
     //data
     private eventPictures: any[];
@@ -55,19 +60,20 @@ export class AboutComponent{
         this.eventPictures = [
             {
                 "url": "app/images/events/DSC04960.jpg",
-                "discription": "Description for the photo1"
+                "discription": "Description for the photo 1"
             },
             {
                 "url": "app/images/events/DSC04908.jpg",
-                "discription": "Description for the photo2"
+                "discription": "Description for the photo 2"
             },
             {
                 "url": "app/images/events/DSC04939.jpg",
-                "discription": "Description for the photo3"
+                "discription": "Description for the photo 3"
             }
         ];
         this.slideDone = true;
         this.mSlideDone = true;
+        this.slideSpeed = 3;
     }
 
     ngAfterViewInit(): void {
@@ -91,6 +97,9 @@ export class AboutComponent{
         this.mDiscriptions = this.oMSlide.querySelectorAll("p");
         this.mButtons = this.oMSlide.querySelectorAll(".button");
         this.oButtons = this.oMSlide.querySelector(".buttons");
+        this.oNav = this.nav.nativeElement;
+        this.aButtons = this.oNav.querySelectorAll("button");
+        this.aUnderscores = this.oNav.querySelectorAll(".underscore");
 
         //initialize canvas for mentor section
         this.oCanvas.style.width = document.documentElement.offsetWidth + "px";
@@ -115,6 +124,9 @@ export class AboutComponent{
         this.oMentorList.ontouchstart = (e) => {
             this.onMobileDrag(e, this.oScroll, this.oContainer, this.oMentorList, 'content');
         };
+
+        //initialize nav bar
+        this.initNavBar();
     }
 
     //handle the situation when window is re-sized
@@ -130,11 +142,19 @@ export class AboutComponent{
         this.mInitSlide();
     }
 
+    initNavBar(): void {
+        for(let i=0;i<this.aButtons.length;i++) {
+            this.aUnderscores[i].style.width = "0";
+            this.aUnderscores[i].style.left = (this.aButtons[i].offsetLeft + this.aButtons[i].offsetWidth / 2) + "px";
+        }
+    }
+
     mInitSlide(): void {
         for(let i=0;i<this.mPicItems.length;i++) {
             this.mPictures[i].style.height = (this.mPicItems[i].offsetWidth * 0.7) + "px";
         }
-        this.oMSlide.style.height = (this.mPicItems[0].offsetHeight + this.oButtons.offsetHeight) + "px";
+        this.oMPictures.style.height = this.mPicItems[0].offsetHeight + "px";
+        this.oMSlide.style.height = (this.mPicItems[0].offsetHeight + this.oButtons.offsetHeight + 50) + "px";
     }
 
     //initialize picture urls
@@ -416,10 +436,10 @@ export class AboutComponent{
                     top: this.picAttributes[i-1].top,
                 }, ()=>{
                     this.slideDone = true;
-                });
+                }, this.slideSpeed);
                 this.appUtil.myMove_yzy(this.pictures[i], {
                     height: this.picAttributes[i-1].height
-                })
+                }, null, this.slideSpeed)
             }else {
                 this.picItems[i].style.width = this.picAttributes[this.picItems.length - 1].width + "px";
                 this.picItems[i].style.left = this.picAttributes[this.picItems.length - 1].left + "px";
@@ -460,10 +480,10 @@ export class AboutComponent{
                     top: this.picAttributes[i+1].top,
                 }, ()=>{
                     this.slideDone = true;
-                });
+                }, this.slideSpeed);
                 this.appUtil.myMove_yzy(this.pictures[i], {
                     height: this.picAttributes[i+1].height
-                })
+                }, null, this.slideSpeed)
             }else {
                 this.picItems[i].style.width = this.picAttributes[0].width + "px";
                 this.picItems[i].style.left = this.picAttributes[0].left + "px";
@@ -476,6 +496,7 @@ export class AboutComponent{
         this.discriptions = arrl3;
     }
 
+    //mobile slide section
     onMobileButtonClick(button: any): void {
         let active = this.oMSlide.querySelector(".activeb");
         if(button.className.toUpperCase().indexOf("ACTIVEB") !== -1 || !this.mSlideDone) {
@@ -527,5 +548,31 @@ export class AboutComponent{
         setTimeout(()=>{
             this.mSlideDone = true;
         }, 600);
+    }
+
+    //handle nav bar click event
+    onNavButtonClick(nav: any): void {
+        this.underscoreMove(nav);
+    }
+
+    underscoreMove(nav: any): void {
+        let aButtons, aUnderscores;
+        aButtons = this.aButtons;
+        aUnderscores = this.aUnderscores;
+        if(nav.className.toUpperCase() !== "ACTIVE") {
+            let index = nav.dataset.index;
+            for(let i=0;i<aButtons.length;i++) {
+                aButtons[i].className = "";
+                this.appUtil.myMove_yzy(aUnderscores[i],{
+                    width: 0,
+                    left: (aButtons[i].offsetLeft + aButtons[i].offsetWidth / 2)
+                })
+            }
+            aButtons[index-1].className = "active";
+            this.appUtil.myMove_yzy(aUnderscores[index-1],{
+                width: aButtons[index-1].offsetWidth,
+                left: aButtons[index-1].offsetLeft
+            });
+        }
     }
 }

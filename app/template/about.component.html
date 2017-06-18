@@ -1,4 +1,17 @@
 <div class="component aboutWrap">
+    <div class="infoWrap">
+        <div #nav class="canaInfoNav">
+            <button #btn1 data-index=1 (click)="onNavButtonClick(btn1)">CANA</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+            <button #btn2 data-index=2 (click)="onNavButtonClick(btn2)">Mentors</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+            <button #btn3 data-index=3 (click)="onNavButtonClick(btn3)">Supports</button>
+            <div class="underscore"></div>
+            <div class="underscore"></div>
+            <div class="underscore"></div>
+        </div>
+    </div>
+    <hr class="infoNavBottomLine"/>
     <div class="canaInfo container-fluid">
         <div class="canaInfoWrap">
             <div class="leftside col-sm-12 col-md-5">
@@ -99,28 +112,28 @@
             </div>
         </div>
     </div>
-    <h3 class="slide_title"><p>Put some of photos of our students and events.<br>几年的留学生活转瞬即逝，不知不觉间发现已是独自面对出入职场的挑战。由于大多数在校期间仅忙于功课，导致缺乏相关工作经验成为最大的挑战。</p></h3>
+    <h3 class="slide_title"><p><span>Some of photos of our students and events.</span><br>几年的留学生活转瞬即逝，不知不觉间发现已是独自面对出入职场的挑战。由于大多数在校期间仅忙于功课，导致缺乏相关工作经验成为最大的挑战。</p></h3>
     <div #slide class="slide">
         <div class="pictures">
             <div class="pic_wrap">
                 <div class="picture"></div>
-                <p>Description for the photo</p>
+                <a routerLink="detail"><p>Description for the photo</p></a>
             </div>
             <div class="pic_wrap">
                 <div class="picture"></div>
-                <p>Description for the photo</p>
+                <a routerLink="detail"><p>Description for the photo</p></a>
             </div>
             <div class="pic_wrap active">
                 <div class="picture"></div>
-                <p>Description for the photo asd asdasd asd a asdasd asd asd asd asd asd asd asd asd sa das dasdasd asd asd asd asd asd asd asd </p>
+                <a routerLink="detail"><p>Description for the photo</p></a>
             </div>
             <div class="pic_wrap">
                 <div class="picture"></div>
-                <p>Description for the photo</p>
+                <a routerLink="detail"><p>Description for the photo</p></a>
             </div>
             <div class="pic_wrap">
                 <div class="picture"></div>
-                <p>Description for the photo</p>
+                <a routerLink="detail"><p>Description for the photo</p></a>
             </div>
         </div>
         <div class="buttons">
@@ -131,23 +144,58 @@
     </div>
     <div #mslide class="slide_mobile">
         <div class="pictures">
-            <div #pic1 class="pic_wrap left">
+            <div class="pic_wrap left">
                 <div class="picture"></div>
-                <p #p>Description for the photo 1</p>
+                <a routerLink="detail"><p>Description for the photo 1</p></a>
             </div>
-            <div #pic2 class="pic_wrap middle">
+            <div class="pic_wrap middle">
                 <div class="picture"></div>
-                <p>Description for the photo 2</p>
+                <a routerLink="detail"><p>Description for the photo 2</p></a>
             </div>
-            <div #pic3 class="pic_wrap right">
+            <div class="pic_wrap right">
                 <div class="picture"></div>
-                <p>Description for the photo 3</p>
+                <a routerLink="detail"><p>Description for the photo 3</p></a>
             </div>
         </div>
         <div class="buttons">
             <div #mbutton1 data-index=1 class="button activeb" (click)="onMobileButtonClick(mbutton1)"></div>
             <div #mbutton2 data-index=2 class="button" (click)="onMobileButtonClick(mbutton2)"></div>
             <div #mbutton3 data-index=3 class="button" (click)="onMobileButtonClick(mbutton3)"></div>
+        </div>
+    </div>
+    <div class="graph">
+        <div class="statistic">
+            <div class="item">
+                <div>
+                    <div class="dot"></div>
+                    <div class="number">20</div>
+                </div>
+                <h3 class="title_">教师人数</h3>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div>
+                    <div class="dot"></div>
+                    <div class="number">42</div>
+                </div>
+                <h3 class="title_">注册学生人数</h3>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div>
+                    <div class="dot"></div>
+                    <div class="number">80<span>%</span></div>
+                </div>
+                <h3 class="title_">成功就业比率</h3>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div>
+                    <div class="dot"></div>
+                    <div class="number">8</div>
+                </div>
+                <h3 class="title_">Workshop数目</h3>
+            </div>
         </div>
     </div>
 </div>

@@ -1,8 +1,10 @@
 @import "bourbon/bourbon";
 @import "theme/theme.scss";
 @import "util/news.util";
+@import "util/globe";
 
 .newsWrap {
+  overflow: hidden;
   width: 100%;
 }
 
@@ -23,16 +25,20 @@
   //nav bar
   .barWrap {
     position: relative;
+    height: 0;
+    @media (max-width: $max-width_mobile) {
+      height: $nav_height;
+    }
     .newsNav {
       padding: 0 18px;
-      max-width: 260px;
+      max-width: 280px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
       height: 0;
-      @media (max-width: $max-width) {
+      @media (max-width: $max-width_mobile) {
         overflow: visible;
-        height: 28px;
+        height: $nav_height;
       }
       button {
         border: none;
@@ -49,16 +55,19 @@
         bottom: 0;
         height: 0;
         width: 39px;
-        border-bottom: 2px solid $orange-button-color;
+        border-bottom: 1px solid $orange-button-color;
       }
     }
   }
 
   .news_, .career_ {
     display: none;
-    @media (max-width: 500px) {
+    @media (max-width: $max-width_mobile) {
+      position: relative;
       display: block;
-      border-width: 2px;
+      width: 200%;
+      left: -50%;
+      border-width: 1px;
     }
   }
 
@@ -244,7 +253,7 @@
     color: $green-text-color;
     display: inline-block;
     padding-top: 50px;
-    @media (max-width: $max-width) {
+    @media (max-width: $max-width_mobile) {
       display: block;
       overflow: hidden;
       height: 0;
@@ -260,6 +269,9 @@
     text-align: left;
     margin-top: 35px;
     margin-bottom: 53px;
+    h5 {
+      font-weight: bold;
+    }
   }
   .cicle {
     width: 30px;
@@ -479,21 +491,21 @@
 
   .careerWrap {
     position: relative;
-    overflow: hidden;
     height: 0;
-    @media (max-width: $max-width) {
-      margin-top: 136px;
-      overflow: visible;
-      height: 28px;
+    @media (max-width: $max-width_mobile) {
+      height: $nav_height;
     }
     .careerNav {
       padding: 0 18px;
-      max-width: 280px;
+      max-width: 300px;
       margin: 0 auto;
       position: relative;
-      @media (max-width: $max-width) {
+      overflow: hidden;
+      height: 0;
+      @media (max-width: $max-width_mobile) {
+        margin-top: 136px;
         overflow: visible;
-        height: 28px;
+        height: $nav_height;
       }
       button {
         border: none;
@@ -510,7 +522,7 @@
         bottom: 0;
         height: 0;
         width: 39px;
-        border-bottom: 2px solid $orange-button-color;
+        border-bottom: 1px solid $orange-button-color;
       }
     }
   }
