@@ -9,8 +9,8 @@ import { AppUtil } from '../../util/app.util';
 })
 
 export class NewsComponent{
-    @ViewChild("nav") nav:ElementRef;
-    @ViewChild("cnav") cnav:ElementRef;
+    @ViewChild("nav") nav: ElementRef;
+    @ViewChild("cnav") cnav: ElementRef;
 
     private oNav: any;
     private aButtons: any;

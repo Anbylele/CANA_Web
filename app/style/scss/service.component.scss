@@ -1,1 +1,373 @@
 @import "bourbon/bourbon";
+@import "theme/theme.scss";
+@import "util/globe";
+
+$process-width: 900px;
+$details-width: 1000px;
+
+.serviceWrap {
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  //nav bar
+  .barWrap {
+    margin-top: 36px;
+    position: relative;
+    height: $nav_height;
+    .serviceNav {
+      padding: 0 18px;
+      max-width: 320px;
+      margin: 0 auto;
+      position: relative;
+      height: $nav_height;
+      @media (max-width: 500px) {
+        padding: 0 32px;
+      }
+      button {
+        border: none;
+        font-size: 1.7rem;
+        &:nth-of-type(1) {
+          float: left;
+        }
+        &:nth-of-type(2) {
+          float: right;
+        }
+      }
+      .underscore {
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        width: 39px;
+        border-bottom: 1px solid $orange-button-color;
+      }
+    }
+  }
+  .service_ {
+    display: block;
+    width: 100%;
+    border-width: 1px;
+  }
+
+  .dialog {
+    padding: 0 18px;
+    max-width: 536px;
+    margin: 118px auto 98px;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    @media (max-width: 500px) {
+      margin-top: 80px;
+      margin-bottom: 60px;
+    }
+  }
+
+  .process {
+    text-align: center;
+    padding: 0 18px;
+    .sec {
+      display: inline-block;
+      @media (max-width: $process-width) {
+        display: block;
+      }
+    }
+    .items {
+      margin-top: 23px;
+      display: inline-block;
+      img {
+        width: 100px;
+        @media (max-width: $process-width) {
+          width: 80px;
+        }
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1.4rem;
+        &:nth-of-type(1) {
+          margin: 30px 0;
+          @media (max-width: $process-width) {
+            margin: 8px 0;
+          }
+        }
+        &:nth-of-type(2) {
+          margin-top: 8px;
+        }
+      }
+    }
+    .arrow_ {
+      width: 68px;
+      vertical-align: top;
+      margin-top: 66px;
+      @media (max-width: $process-width) {
+        width: 50px;
+        margin-top: 59px;
+      }
+      &.middle {
+        @media (max-width: $process-width) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .details {
+    max-width: 1200px;
+    margin: 118px auto 0;
+    @media (max-width: $details-width) {
+      margin: 0 auto;
+    }
+    .leftSide {
+      position: relative;
+      @media (max-width: $details-width) {
+        text-align: center;
+        width: 100%;
+      }
+      .detail-sec {
+        position: relative;
+        margin-left: 166px;
+        margin-top: 120px;
+        max-width: 300px;
+        @media (max-width: $details-width) {
+          margin-top: 160px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          .first {
+            width: 95px;
+            left: calc(50% - 63px);
+            top: -76px;
+          }
+          .second {
+            width: 95px;
+            left: calc(50% - 49px);
+            top: -76px;
+          }
+        }
+        img {
+          position: absolute;
+          width: 95px;
+          left: -108px;
+          top: -3px;
+        }
+        h2 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 1.2rem;
+          line-height: 3rem;
+        }
+      }
+      .more {
+        height: 19px;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-left: 166px;
+        margin-top: 80px;
+        border-bottom: 1px solid #333;
+        @media (max-width: $details-width) {
+          margin-left: 0;
+          margin-top: 56px;
+          border-bottom: none;
+        }
+      }
+    }
+    .rightSide {
+      @media (max-width: $details-width) {
+        display: none;
+      }
+      img {
+        position: relative;
+        width: 630px;
+        left: 36px;
+      }
+    }
+    .register {
+      text-align: center;
+      @media (max-width: $details-width) {
+        margin-top: 56px;
+      }
+      button {
+        $height: 36px;
+        width: 160px;
+        height: $height;
+        border: none;
+        color: #fff;
+        border-radius: $height;
+        line-height: $height;
+        font-weight: 100;
+        background-color: $green-button-color;
+        &:hover {
+          background-color: $green-button-hover;
+        }
+      }
+    }
+  }
+
+  .dialog2 {
+    text-align: center;
+    padding: 0 18px;
+    max-width: 490px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 100px auto 66px;
+    line-height: 2.7rem;
+  }
+
+  .combine {
+    width: 860px;
+    height: 474px;
+    position: relative;
+    margin: 0 auto;
+    @media (max-width: 900px) {
+      
+    }
+    .leftside {
+      position: relative;
+      width: 277px;
+      float: left;
+      height: 100%;
+      &:hover {
+        z-index: 6;
+        transition: box-shadow 0.6s;
+        box-shadow: 0 11px 80px 10px rgba(136,136,136,0.49);
+      }
+      .image {
+        position: relative;
+        background: url("app/images/poster1.jpg") 0 0 no-repeat;
+        background-size: cover;
+        height: 345px;
+        width: 100%;
+        .arrow_ {
+          position: absolute;
+          width: 0;
+          height: 0;
+          bottom: -2px;
+          left: calc(50% - 18px);
+          border-bottom: 10px solid #fff;
+          border-left: 18px solid transparent;
+          border-right: 18px solid transparent;
+          border-top: 10px solid transparent;
+        }
+      }
+      h3 {
+        font-size: 1.6rem;
+        color: #676767;
+        font-weight: bold;
+        box-sizing: border-box;
+        border: 1px solid $gray;
+        width: 100%;
+        height: calc(100% - 345px);
+        line-height: 129px;
+        text-align: center;
+      }
+    }
+    .rightside {
+      position: relative;
+      width: 567px;
+      height: 100%;
+      float: right;
+      .card {
+        position: absolute;
+        width: 100%;
+        height: 144px;
+        &:hover {
+          z-index: 6;
+          transition: box-shadow 0.6s;
+          box-shadow: 0 11px 50px 0 rgba(136,136,136,0.49);
+        }
+        .image {
+          width: 347px;
+          height: 100%;
+          position: relative;
+          z-index: 2;
+          background: url("app/images/poster2.jpg") 0 0 no-repeat;
+          background-size: cover;
+          .arrow_ {
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: -2px;
+            top: calc(50% - 18px);
+            border-bottom: 18px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #fff;
+            border-top: 18px solid transparent;
+          }
+        }
+        h3 {
+          font-size: 1.6rem;
+          color: #676767;
+          font-weight: bold;
+          box-sizing: border-box;
+          position: absolute;
+          border: 1px solid $gray;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: calc(100% - 347px);
+          text-align: center;
+          line-height: 144px;
+        }
+        &:nth-of-type(2) {
+          top: 164px;
+          .image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: url("app/images/poster3.jpg") 0 0 no-repeat;
+            .arrow_ {
+              left: -2px;
+              border-left: 10px solid #fff;
+              border-right: 10px solid transparent;
+            }
+          }
+          h3 {
+            left: 0;
+          }
+        }
+        &:nth-of-type(3) {
+          bottom: 0;
+          .image {
+            background: url("app/images/poster4.jpg") 0 0 no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .dialog3 {
+    padding: 0 18px;
+    max-width: 560px;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    margin: 0 auto;
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .detail-link {
+    margin-top: 25px;
+    margin-bottom: 42px;
+    color: $light-green;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    @media (max-width: 800px) {
+      margin-bottom: 80px;
+    }
+    img {
+      position: relative;
+      width: 14px;
+      top: -2px;
+    }
+  }
+}
