@@ -30,8 +30,8 @@
       height: $nav_height;
     }
     .newsNav {
-      padding: 0 18px;
-      max-width: 280px;
+      padding: 0 30px;
+      max-width: 320px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
@@ -403,6 +403,9 @@
   }
   .career {
     padding-top: 150px;
+    @media (max-width: $max-width_mobile) {
+      padding-top: 55px;
+    }
     @media (max-width: $max-width) {
       padding-bottom: 0;
       padding-top: 55px;
@@ -497,13 +500,13 @@
     }
     .careerNav {
       padding: 0 18px;
-      max-width: 300px;
+      max-width: 320px;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
       height: 0;
       @media (max-width: $max-width_mobile) {
-        margin-top: 136px;
+        margin-top: 180px;
         overflow: visible;
         height: $nav_height;
       }
