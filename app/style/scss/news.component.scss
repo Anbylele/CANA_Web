@@ -6,6 +6,7 @@
 .newsWrap {
   overflow: hidden;
   width: 100%;
+  margin-top: -220px;
 }
 
 .handleWidth {
@@ -125,7 +126,7 @@
     font-size:25px;
   }
   h5 {
-    font-size: 13px;
+    font-size: 1.4rem;
   }
   h6 {
     font-size: 13px;
@@ -138,12 +139,11 @@
     color: $text-color-darken;
   }
   h5 {
-    font-size: 15px;
-    line-height: 32px;
+    line-height: 4rem;
     color: $text-color-darken;
   }
   h6 {
-    font-size: 13px;
+    font-size: 1.2rem;
     line-height: 20px;
     color: $text-color-lighter;
   }
@@ -243,7 +243,7 @@
     color: $text-color-darken;
     margin-bottom: 10px;
     h4 {
-      font-size: 1.7rem;
+      font-size: 1.43rem;
       line-height: 3rem;
       font-weight: 500;
     }
@@ -312,12 +312,11 @@
     }
   }
   .event-title h5 {
-    line-height: 36px;
     font-weight: bold;
   }
   .event-title h6 {
-    line-height: 30px;
-    font-size: 14.5px;
+    line-height: 2.8rem;
+    font-size: 1.3rem;
   }
   .event-title {
     @media (max-width: $max-width) {
@@ -372,12 +371,13 @@
     }
   }
   .fa-calendar-check-o{
-    margin-top: 25px;
+    margin-top: 35px;
     padding-right: 10px;
     font-size: 18px;
   }
   .event-date {
     display: inline-block;
+    font-size: 1.3rem;
     @media (max-width: $max-width) {
       font-size: 1.8rem!important;
     }
@@ -385,7 +385,7 @@
   .register {
     position: absolute;
     right: 0;
-    margin-top: 10px;
+    margin-top: 28px;
     z-index: 6;
     @media (max-width: $max-width) {
       right: calc(50% - 90px);
@@ -422,8 +422,8 @@
     }
     position: relative;
     cursor: pointer;
-    width:10vw;
-    height: 10vw;
+    width:13vw;
+    height: 13vw;
     border: 2px solid $chatpop-color;
     border-radius: 7px;
     background-color: #fff;
@@ -555,13 +555,16 @@
       padding-left: $gap-hrizon;
       padding-right: $gap-hrizon;
       margin-bottom: 36px;
+      margin-right: 10px;
+      margin-left: 40px;
       background: $cyran;
       color: #fff;
       border-radius: 6px;
       h3, h4 {
         margin: 12px 0;
-        font-size: 1.5rem;
-        line-height: 2.3rem;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        font-weight: lighter;
       }
       .arrow-right {
         position: absolute;
