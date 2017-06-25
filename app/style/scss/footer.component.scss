@@ -9,6 +9,9 @@
     padding: 0 70px;
     max-width: 1000px;
     margin: 0 auto;
+    @media (max-width: $max-width) {
+      padding: 0 40px;
+    }
 
   }
 

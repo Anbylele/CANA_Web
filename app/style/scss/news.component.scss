@@ -253,6 +253,7 @@
     color: $green-text-color;
     display: inline-block;
     padding-top: 50px;
+    font-size: 1.4rem;
     @media (max-width: $max-width_mobile) {
       display: block;
       overflow: hidden;
@@ -543,7 +544,7 @@
     margin-bottom: 70px;
     padding-top: 200px;
     position: relative;
-    max-width: 700px;
+    max-width: 650px;
     @media (max-width: 600px) {
       padding-top: 136px;
     }
@@ -555,8 +556,6 @@
       padding-left: $gap-hrizon;
       padding-right: $gap-hrizon;
       margin-bottom: 36px;
-      margin-right: 10px;
-      margin-left: 40px;
       background: $cyran;
       color: #fff;
       border-radius: 6px;
