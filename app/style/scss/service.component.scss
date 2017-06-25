@@ -14,7 +14,7 @@ $details-width: 1000px;
 
   //nav bar
   .barWrap {
-    margin-top: 36px;
+    margin-top: 23px;
     position: relative;
     height: $nav_height;
     .serviceNav {
@@ -28,7 +28,6 @@ $details-width: 1000px;
       }
       button {
         border: none;
-        font-size: 1.7rem;
         &:nth-of-type(1) {
           float: left;
         }
@@ -56,8 +55,9 @@ $details-width: 1000px;
     max-width: 536px;
     margin: 118px auto 98px;
     line-height: 3rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.43rem;
+    color: $text-color-darken;
+    font-weight: lighter;
     text-align: center;
     @media (max-width: 500px) {
       margin-top: 80px;
@@ -78,17 +78,19 @@ $details-width: 1000px;
       margin-top: 23px;
       display: inline-block;
       img {
-        width: 100px;
+        width: 105px;
         @media (max-width: $process-width) {
           width: 80px;
         }
       }
       h3 {
-        font-weight: 600;
+        font-weight: lighter;
         font-size: 1.3rem;
+        color: $text-color-darken;
       }
       p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        color: $text-color-darken;
         &:nth-of-type(1) {
           margin: 30px 0;
           @media (max-width: $process-width) {
@@ -130,8 +132,8 @@ $details-width: 1000px;
       }
       .detail-sec {
         position: relative;
-        margin-left: 166px;
-        margin-top: 120px;
+        margin-left: 230px;
+        margin-top: 60px;
         max-width: 300px;
         @media (max-width: $details-width) {
           margin-top: 160px;
@@ -156,21 +158,23 @@ $details-width: 1000px;
           top: -3px;
         }
         h2 {
-          font-size: 1.5rem;
-          font-weight: bold;
+          font-size: 1.43rem;
+          font-weight: lighter;
           margin-bottom: 20px;
         }
         p {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           line-height: 3rem;
+          color: $text-color-lighter;
         }
       }
       .more {
         height: 19px;
         display: inline-block;
         font-size: 1.2rem;
-        font-weight: bold;
-        margin-left: 166px;
+        color: $text-color-lighter;
+        font-weight: lighter;
+        margin-left: 230px;
         margin-top: 80px;
         border-bottom: 1px solid #333;
         @media (max-width: $details-width) {
@@ -186,8 +190,8 @@ $details-width: 1000px;
       }
       img {
         position: relative;
-        width: 630px;
-        left: 36px;
+        width: 500px;
+        left: 100px;
       }
     }
     .register {
@@ -216,7 +220,7 @@ $details-width: 1000px;
     text-align: center;
     padding: 0 18px;
     max-width: 490px;
-    font-size: 1.5rem;
+    font-size: 1.43rem;
     font-weight: 300;
     margin: 100px auto 66px;
     line-height: 2.7rem;
@@ -228,7 +232,7 @@ $details-width: 1000px;
     position: relative;
     margin: 0 auto;
     @media (max-width: 900px) {
-      
+
     }
     .leftside {
       position: relative;
@@ -347,11 +351,12 @@ $details-width: 1000px;
   .dialog3 {
     padding: 0 18px;
     max-width: 560px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 3rem;
     margin: 0 auto;
     margin-top: 80px;
     text-align: center;
+    color: $text-color-lighter;
   }
 
   .detail-link {
@@ -359,7 +364,7 @@ $details-width: 1000px;
     margin-bottom: 42px;
     color: $light-green;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: lighter;
     text-align: center;
     @media (max-width: 800px) {
       margin-bottom: 180px;

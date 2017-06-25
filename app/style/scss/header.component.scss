@@ -37,6 +37,7 @@
         .cana-logo {
           height: $height;
           margin-right: 36px;
+          margin-left: 58px;
           @media (max-width: 800px){
             margin-left: 36px;
           }
@@ -63,7 +64,6 @@
 
           .nav {
             position: relative;
-            font-size: 1.5rem;
             float: left;
             border: none;
             color: $text-color-darken;
@@ -93,6 +93,7 @@
           border-radius: $height;
           border:none;
           background: #ffffff;
+          margin-right: 58px;
           @media (max-width: 800px) {
             display: none;
           }
