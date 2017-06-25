@@ -28,7 +28,11 @@
         position: relative;
         max-width: 1000px;
         margin: 0 auto;
-        padding: 18px;
+        padding: 18px 50px;
+
+        @media (max-width: 800px) {
+          padding: 18px;
+        }
 
         .cana-logo, nav {
           float: left;
@@ -37,9 +41,8 @@
         .cana-logo {
           height: $height;
           margin-right: 36px;
-          margin-left: 58px;
           @media (max-width: 800px){
-            margin-left: 36px;
+            margin-left: 32px;
           }
           @media (max-width: 660px){
             margin-left: 8px;
@@ -93,7 +96,6 @@
           border-radius: $height;
           border:none;
           background: #ffffff;
-          margin-right: 58px;
           @media (max-width: 800px) {
             display: none;
           }
@@ -113,7 +115,7 @@
           border: none;
           float: right;
           position: relative;
-          margin-right: 36px;
+          margin-right: 32px;
           @media (min-width: 801px) {
             display: none;
           }

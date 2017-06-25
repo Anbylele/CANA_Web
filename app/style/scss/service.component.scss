@@ -133,13 +133,19 @@ $details-width: 1000px;
       .detail-sec {
         position: relative;
         margin-left: 230px;
-        margin-top: 60px;
+        margin-top: 80px;
         max-width: 300px;
+        &:nth-of-type(2) {
+          margin-top: 56px;
+        }
         @media (max-width: $details-width) {
           margin-top: 160px;
           margin-left: auto;
           margin-right: auto;
           text-align: center;
+          &:nth-of-type(2) {
+            margin-top: 160px;
+          }
           .first {
             width: 95px;
             left: calc(50% - 63px);
@@ -175,7 +181,7 @@ $details-width: 1000px;
         color: $text-color-lighter;
         font-weight: lighter;
         margin-left: 230px;
-        margin-top: 80px;
+        margin-top: 50px;
         border-bottom: 1px solid #333;
         @media (max-width: $details-width) {
           margin-left: 0;
@@ -196,6 +202,7 @@ $details-width: 1000px;
     }
     .register {
       text-align: center;
+      margin-top: 18px;
       @media (max-width: $details-width) {
         margin-top: 56px;
       }
