@@ -277,6 +277,7 @@
     &.newslink {
       padding-left: 8px;
     }
+    font-size: 1.4rem;
     @media (max-width: $max-width_mobile) {
       display: none;
     }
@@ -564,7 +565,7 @@
     margin-bottom: 70px;
     padding-top: 200px;
     position: relative;
-    max-width: 700px;
+    max-width: 650px;
     @media (max-width: 600px) {
       padding-top: 136px;
     }
