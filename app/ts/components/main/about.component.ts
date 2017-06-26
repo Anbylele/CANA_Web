@@ -270,8 +270,12 @@ export class AboutComponent{
     }
 
     onMobileDrag(event, scrollBar, container, mentorList, type): void {
-        event.stopPropagation();
-        event.preventDefault();
+        if(event.touches && event.touches[1]) {
+            event.stopPropagation();
+            event.preventDefault();
+        }else {
+            return;
+        }
         let timer;
         let e = event.touches[0];
         let init = {
@@ -334,8 +338,6 @@ export class AboutComponent{
     }
 
     onMove(event, barTop, bottom, init, scrollBar, container, mentorList): void {
-        event.stopPropagation();
-        event.preventDefault();
         let e = event.touches ? event.touches[0] : event;
         let mouseY = e.pageY;
         let moveY = mouseY - init.initialY;
@@ -354,10 +356,6 @@ export class AboutComponent{
     }
 
     onContentMove(event, contentTop, bottom, init, scrollBar, container, mentorList): void {
-        if(!event.touches) {
-            event.stopPropagation();
-            event.preventDefault();
-        }
         let e = event.touches ? event.touches[0] : event;
         let mouseY = e.pageY;
         let moveY = mouseY - init.initialY;

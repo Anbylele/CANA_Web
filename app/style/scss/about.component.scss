@@ -290,12 +290,29 @@
           left: 0;
         }
       }
+      .more {
+        color: $green-button-color;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        img {
+          $width: 15px;
+          margin-top: -4px;
+          box-sizing: content-box;
+          padding: 5px;
+          display: inline-block;
+          width: $width;
+          height: $width;
+          border-radius: 50%;
+          border: 2px solid $green-text-color;
+        }
+      }
     }
     .corp {
       position: relative;
       text-align: center;
       top: 0px;
-      padding-top:50px;
+      padding-top: 66px;
       @media (max-width: 992px) {
         top: 0px;
       }

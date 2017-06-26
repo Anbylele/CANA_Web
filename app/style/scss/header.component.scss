@@ -41,6 +41,7 @@
         .cana-logo {
           height: $height;
           margin-right: 36px;
+          cursor: pointer;
           @media (max-width: 800px){
             margin-left: 32px;
           }
