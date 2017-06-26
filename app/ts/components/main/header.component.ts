@@ -71,15 +71,17 @@ export class HeaderComponent{
 
     handleHeader(): void {
         if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
-            this.oHeader.style.backgroundColor = "#fbfbfb";
+            this.oHeader.style.backgroundColor = "#FFFFFF";
             this.oHeader.style.position = "fixed";
             this.oHeader.style.top = "0";
-            this.oLoginButton.style.backgroundColor = "#c7e5dd";
+            this.oLoginButton.style.backgroundColor = "#8CC7B8";
+            this.oLoginButton.style.color = "#ffffff";
             this.oHeader.style.borderBottom = "1px solid #e8e8e8";
         } else {
             this.oHeader.style.backgroundColor = "transparent";
             this.oHeader.style.position = "relative";
             this.oLoginButton.style.backgroundColor = "#ffffff";
+            this.oLoginButton.style.color = "rgba(0,0,0,0.72)";
             this.oHeader.style.borderBottom = "1px solid transparent";
         }
     }
